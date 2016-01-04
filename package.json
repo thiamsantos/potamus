@@ -1,0 +1,21 @@
+{
+  "name": "gentle-material",
+  "version": "1.0.0",
+  "description": "A lightweight and responsive Material Design CSS Framework",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:thiamsantos/gentle-material.git"
+  },
+  "author": "Thiago Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-watch": "^4.3.5"
+  }
+}
