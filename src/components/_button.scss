@@ -1,0 +1,40 @@
+%button {
+  background-color: #3F51B5;
+  border-radius: 2px;
+  border-width: 0;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  color: #fff;
+  display: block;
+  margin: 10px 0;
+  overflow: hidden;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  &:active {
+    transform: scale(1.01);
+  }
+}
+.btn-small {
+  @extend %button;
+  padding: 5px;
+  width: 100px;
+}
+.btn,
+[type=button],
+[type=submit],
+button {
+  @extend %button;
+  padding: 10px;
+  width: 200px;
+}
+.btn-large {
+  @extend %button;
+  padding: 15px;
+  width: 300px;
+}
+.btn-block {
+  @extend %button;
+  padding: 15px;
+  width: 100%;
+}

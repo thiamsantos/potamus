@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 // Dependencies
+//@import "components/normalize";
 @import "components/variables";
-@import "components/normalize";
+@import "components/global";
 
 // Components
 @import "components/typography";
