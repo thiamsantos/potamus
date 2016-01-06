@@ -96,6 +96,7 @@ blockquote {
   display: block;
   font-weight: normal;
   margin: 1rem 0;
+  max-width: 100%;
   overflow: hidden;
   outline: none;
   position: relative;
@@ -150,7 +151,7 @@ ol {
 
 .form-group {
   position: relative;
-  margin: 1rem 0 2rem 0; }
+  margin: 2rem 0; }
   .form-group input[type=text], .form-group textarea {
     background-color: transparent;
     border: none;
@@ -181,3 +182,9 @@ ol {
 
 .disabled {
   pointer-events: none; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
