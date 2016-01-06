@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>list</title>   
+  <title>typography</title>   
   <meta name="description" content="">
   <meta name="robots" content="index, follow">
   <meta name="author" content="">
@@ -16,44 +16,93 @@
   <link rel="stylesheet" href="dist/gentle.css">
 </head>
 <body>
-  <!-- Description list -->
-  <dl>
-    <dt>Description list item 1</dt>
-    <dd>Description list item 1.1</dd>
-    <dd>Description list item 1.1</dd>
-    <dd>Description list item 1.1</dd>
-    <dd>Description list item 1.1</dd>
-    <dd>Description list item 1.1</dd>
-    <dt>Description list item 2</dt>
-    <dd>Description list item 2.1</dd>
-    <dd>Description list item 2.1</dd>
-    <dd>Description list item 2.1</dd>
-    <dd>Description list item 2.1</dd>
-    <dd>Description list item 2.1</dd>
-  </dl>
+  <main class="container">
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <a href="#">Archor</a><br>
+    <em>Emphasis</em><br>
+    <small>Small</small><br>
+    <strong>Strong</strong><br>
+    <u>Underline</u>
 
-  <!-- Unordered list -->
-  <ul class="list">
-    <li>Unordered list item 1</li>
-    <li>Unordered list item 2</li>
-  </ul>
+    <blockquote>
+      <p>A gentleman with material design</p>
+    </blockquote>
 
-  <!-- Ordered list -->
-  <ol class="list">
-    <li>Ordered list item 1</li>
-    <li>Ordered list item 2</li>
-  </ol>
+    <button class="btn-small">Button</button>
+    <input type="button" value="input button" class="btn-small">
+    <input type="submit" value="submit" class="btn-small">
+    <a href="" class="btn-small">link button</a>
 
-  <!-- Unordered list -->
-  <ul>
-    <li>Unordered list item 1</li>
-    <li>Unordered list item 2</li>
-  </ul>
+    <button class="btn">Button</button>
+    <input type="button" value="input button" class="btn">
+    <input type="submit" value="submit" class="btn">
+    <a href="" class="btn">link button</a>
+    
+    <button class="btn-large">Button</button>
+    <input type="button" value="input button" class="btn-large">
+    <input type="submit" value="submit" class="btn-large">
+    <a href="" class="btn-large">link button</a>
+    
+    <button class="btn-block">Button</button>
+    <input type="button" value="input button" class="btn-block">
+    <input type="submit" value="submit" class="btn-block">
+    <a href="" class="btn-block">link button</a>
 
-  <!-- Ordered list -->
-  <ol>
-    <li>Ordered list item 1</li>
-    <li>Ordered list item 2</li>
-  </ol>
+    <!-- Description list -->
+    <dl>
+      <dt>Description list item 1</dt>
+      <dd>Description list item 1.1</dd>
+      <dd>Description list item 1.1</dd>
+      <dd>Description list item 1.1</dd>
+      <dd>Description list item 1.1</dd>
+      <dd>Description list item 1.1</dd>
+      <dt>Description list item 2</dt>
+      <dd>Description list item 2.1</dd>
+      <dd>Description list item 2.1</dd>
+      <dd>Description list item 2.1</dd>
+      <dd>Description list item 2.1</dd>
+      <dd>Description list item 2.1</dd>
+    </dl>
+
+    <!-- Unordered list -->
+    <ul>
+      <li>Unordered list item 1</li>
+      <li>Unordered list item 2</li>
+    </ul>
+
+    <!-- Ordered list -->
+    <ol>
+      <li>Ordered list item 1</li>
+      <li>Ordered list item 2</li>
+    </ol>
+
+    <form>
+      <p>All inputs must have the required property.</p>
+      <div class="form-group">
+        <input type="text" id="name" required>
+        <label for="name">Name</label>
+      </div>
+      <div class="form-group">
+        <textarea id="comment" required></textarea>
+        <label for="comment">Comment</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="check">
+        <label for="check">Do you check?</label>
+      </div>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </main>
 </body>
 </html>

@@ -5,10 +5,15 @@ html {
   box-sizing: inherit;
   vertical-align: baseline;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: inherit; }
 
 a {
   text-decoration: none; }
+
+.container {
+  width: 80%;
+  margin: 0 auto; }
 
 html {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -23,7 +28,7 @@ html {
       font-size: 12px; } }
   @media screen and (min-width: 800px) {
     html {
-      font-size: 14px; } }
+      font-size: 13px; } }
 
 body {
   font-size: 1.5em; }
@@ -81,50 +86,49 @@ blockquote {
   blockquote *:last-child {
     margin-bottom: 0; }
 
-.btn-small, .btn,
-[type=button],
-[type=submit],
-button, .btn-large, .btn-block {
+.btn-small, .btn, .btn-large, .btn-block {
   background-color: #3F51B5;
   border-radius: 2px;
   border-width: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
+  cursor: pointer;
   display: block;
-  margin: 10px 0;
+  font-weight: normal;
+  margin: 1rem 0;
   overflow: hidden;
   outline: none;
   position: relative;
   text-align: center;
-  text-transform: uppercase; }
-  .btn-small:active, .btn:active,
-  [type=button]:active,
-  [type=submit]:active,
-  button:active, .btn-large:active, .btn-block:active {
-    transform: scale(1.01); }
+  text-transform: uppercase;
+  transition: all .3s ease-out; }
+  .btn-small:hover, .btn:hover, .btn-large:hover, .btn-block:hover, .btn-small:active, .btn:active, .btn-large:active, .btn-block:active {
+    background-color: #5C6BC0;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
 .btn-small {
   padding: 5px;
-  width: 100px; }
+  width: 120px;
+  font-size: 1rem; }
 
-.btn,
-[type=button],
-[type=submit],
-button {
+.btn {
   padding: 10px;
-  width: 200px; }
+  width: 200px;
+  font-size: 1.2rem; }
 
 .btn-large {
   padding: 15px;
-  width: 300px; }
+  width: 300px;
+  font-size: 1.5rem; }
 
 .btn-block {
   padding: 15px;
-  width: 100%; }
+  width: 100%;
+  font-size: 1.5rem; }
 
 dl {
   list-style: none;
-  margin-bottom: 2rem; }
+  margin-bottom: 1rem; }
   dl dt {
     background-color: #f5f5f5;
     padding: 1rem; }
@@ -136,12 +140,45 @@ dl {
 ul, ol {
   list-style: none; }
 
-ul.list, ol.list {
-  margin-bottom: 2rem;
-  padding: 1.5rem; }
+ul, ol {
+  padding: 1rem; }
 
-ul.list {
+ul {
   list-style: circle inside; }
 
-ol.list {
+ol {
   list-style: decimal inside; }
+
+.form-group {
+  position: relative;
+  margin: 1rem 0 2rem 0; }
+  .form-group input[type=text], .form-group textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    display: block;
+    padding: .5rem;
+    transition: 0.3s ease-out all;
+    width: 100%; }
+    .form-group input[type=text]:focus ~ label, .form-group input[type=text]:valid ~ label, .form-group textarea:focus ~ label, .form-group textarea:valid ~ label {
+      color: #3F51B5;
+      font-size: .8rem;
+      top: -1rem; }
+    .form-group input[type=text]:focus, .form-group input[type=text]:valid, .form-group textarea:focus, .form-group textarea:valid {
+      outline: none;
+      border-bottom: 1px solid #3F51B5;
+      box-shadow: 0 1px 0 0 #3F51B5; }
+  .form-group input[type=text] ~ label, .form-group textarea ~ label {
+    color: #9e9e9e;
+    font-size: 1rem;
+    left: 5px;
+    pointer-events: none;
+    position: absolute;
+    top: 5px;
+    transition: 0.3s ease-out all;
+    font-weight: normal; }
+  .form-group textarea {
+    resize: none; }
+
+.disabled {
+  pointer-events: none; }

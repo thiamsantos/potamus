@@ -4,37 +4,42 @@
   border-width: 0;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   color: #fff;
+  cursor: pointer;
   display: block;
-  margin: 10px 0;
+  font-weight: normal;
+  margin: 1rem 0;
   overflow: hidden;
   outline: none;
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  &:active {
-    transform: scale(1.01);
+  transition: all .3s ease-out;
+  &:hover, &:active {
+    background-color: #5C6BC0;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
   }
 }
 .btn-small {
   @extend %button;
   padding: 5px;
-  width: 100px;
+  width: 120px;
+  font-size: 1rem;
 }
-.btn,
-[type=button],
-[type=submit],
-button {
+.btn {
   @extend %button;
   padding: 10px;
   width: 200px;
+  font-size: 1.2rem;
 }
 .btn-large {
   @extend %button;
   padding: 15px;
   width: 300px;
+  font-size: 1.5rem;
 }
 .btn-block {
   @extend %button;
   padding: 15px;
   width: 100%;
+  font-size: 1.5rem;
 }
