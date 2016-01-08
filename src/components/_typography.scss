@@ -3,13 +3,11 @@ html {
   font-weight: 300;
   color: #424242;
   line-height: 1.5;
-  @media screen and (min-width: 0) {
-    font-size: 10px;
-  }
-  @media screen and (min-width: 550px) {
+  font-size: 10px;
+  @media only screen and (min-width: 550px) {
     font-size: 12px;
   }
-  @media screen and (min-width: 800px) {
+  @media only screen and (min-width: 900px) {
     font-size: 13px;
   }
 }

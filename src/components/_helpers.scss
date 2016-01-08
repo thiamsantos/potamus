@@ -7,3 +7,10 @@
 .pull-left {
   float: left;
 }
+.clearfix {
+  &:after, &:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
