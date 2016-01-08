@@ -2,10 +2,10 @@
   pointer-events: none;
 }
 .pull-right {
-  float: right;
+  float: right !important;
 }
 .pull-left {
-  float: left;
+  float: left !important;
 }
 .clearfix {
   &:after, &:before {
@@ -13,4 +13,16 @@
     display: table;
     clear: both;
   }
+}
+.right-align {
+  text-align: right;
+}
+.left-align {
+  text-align: left;
+}
+.center-align {
+  text-align: center;
+}
+.hide {
+  display: none !important;
 }
