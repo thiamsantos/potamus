@@ -281,7 +281,8 @@ blockquote {
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: all .3s ease-out; }
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; }
   .btn-small:hover, .btn:hover, .btn-large:hover, .btn-block:hover, .btn-small:active, .btn:active, .btn-large:active, .btn-block:active {
     background-color: #5C6BC0;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36); }
@@ -305,6 +306,32 @@ blockquote {
   padding: 15px;
   width: 100%;
   font-size: 1.5rem; }
+
+.ripple {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  pointer-events: none;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  z-index: 2; }
+
+.ripple.show {
+  -webkit-animation: ripple .45s ease-out;
+  animation: ripple .45s ease-out; }
+
+@-webkit-keyframes ripple {
+  to {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0; } }
+
+@keyframes ripple {
+  to {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0; } }
 
 dl {
   list-style: none;
@@ -331,7 +358,14 @@ ol {
 .form-group {
   position: relative;
   margin: 2rem 0; }
-  .form-group input[type=text], .form-group textarea {
+  .form-group input[type=text],
+  .form-group input[type=email],
+  .form-group input[type=number],
+  .form-group input[type=password],
+  .form-group input[type=search],
+  .form-group input[type=tel],
+  .form-group input[type=url],
+  .form-group textarea {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #9e9e9e;
@@ -339,23 +373,58 @@ ol {
     padding: .5rem;
     transition: 0.3s ease-out all;
     width: 100%; }
-    .form-group input[type=text]:focus ~ label, .form-group input[type=text]:valid ~ label, .form-group textarea:focus ~ label, .form-group textarea:valid ~ label {
+    .form-group input[type=text]:focus ~ label, .form-group input[type=text].used ~ label,
+    .form-group input[type=email]:focus ~ label,
+    .form-group input[type=email].used ~ label,
+    .form-group input[type=number]:focus ~ label,
+    .form-group input[type=number].used ~ label,
+    .form-group input[type=password]:focus ~ label,
+    .form-group input[type=password].used ~ label,
+    .form-group input[type=search]:focus ~ label,
+    .form-group input[type=search].used ~ label,
+    .form-group input[type=tel]:focus ~ label,
+    .form-group input[type=tel].used ~ label,
+    .form-group input[type=url]:focus ~ label,
+    .form-group input[type=url].used ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group textarea.used ~ label {
       color: #3F51B5;
       font-size: .8rem;
       top: -1rem; }
-    .form-group input[type=text]:focus, .form-group input[type=text]:valid, .form-group textarea:focus, .form-group textarea:valid {
+    .form-group input[type=text]:focus, .form-group input[type=text]:valid,
+    .form-group input[type=email]:focus,
+    .form-group input[type=email]:valid,
+    .form-group input[type=number]:focus,
+    .form-group input[type=number]:valid,
+    .form-group input[type=password]:focus,
+    .form-group input[type=password]:valid,
+    .form-group input[type=search]:focus,
+    .form-group input[type=search]:valid,
+    .form-group input[type=tel]:focus,
+    .form-group input[type=tel]:valid,
+    .form-group input[type=url]:focus,
+    .form-group input[type=url]:valid,
+    .form-group textarea:focus,
+    .form-group textarea:valid {
       outline: none;
       border-bottom: 1px solid #3F51B5;
       box-shadow: 0 1px 0 0 #3F51B5; }
-  .form-group input[type=text] ~ label, .form-group textarea ~ label {
-    color: #9e9e9e;
-    font-size: 1rem;
-    left: 5px;
-    pointer-events: none;
-    position: absolute;
-    top: 5px;
-    transition: 0.3s ease-out all;
-    font-weight: normal; }
+    .form-group input[type=text] ~ label,
+    .form-group input[type=email] ~ label,
+    .form-group input[type=number] ~ label,
+    .form-group input[type=password] ~ label,
+    .form-group input[type=search] ~ label,
+    .form-group input[type=tel] ~ label,
+    .form-group input[type=url] ~ label,
+    .form-group textarea ~ label {
+      color: #9e9e9e;
+      font-size: 1rem;
+      left: 5px;
+      pointer-events: none;
+      position: absolute;
+      top: 5px;
+      transition: 0.3s ease-out all;
+      font-weight: normal; }
   .form-group textarea {
     resize: none; }
 
@@ -827,3 +896,5 @@ table {
 
 .hide {
   display: none !important; }
+
+/*# sourceMappingURL=gentle.css.map */

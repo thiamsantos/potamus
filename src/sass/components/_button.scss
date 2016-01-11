@@ -14,7 +14,8 @@
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
   &:hover, &:active {
     background-color: #5C6BC0;
     @include focus-shadow();
@@ -44,3 +45,34 @@
   width: 100%;
   font-size: 1.5rem;
 }
+.ripple {
+  position: absolute;
+  background: rgba(0,0,0,.25);
+  border-radius: 100%;
+  pointer-events: none;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  z-index: 2;
+ }
+
+ .ripple.show {
+  -webkit-animation: ripple .45s ease-out;
+  animation: ripple .45s ease-out;
+ }
+
+ @-webkit-keyframes ripple {
+  to {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+ }
+
+ @keyframes ripple {
+  to {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+ }

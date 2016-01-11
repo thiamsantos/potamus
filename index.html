@@ -12,7 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,300italic,400italic,500italic,700italic" rel="stylesheet">
-  <link rel="stylesheet" href="dist/gentle.css">
+  <link rel="stylesheet" href="dist/css/gentle.css">
+  <script src="dist/js/gentle.js"></script>
 </head>
 <body>
   <main class="container">
@@ -39,23 +40,15 @@
     </blockquote>
 
     <button class="btn-small">Button</button>
-    <input type="button" value="input button" class="btn-small">
-    <input type="submit" value="submit" class="btn-small">
     <a href="" class="btn-small">link button</a>
 
     <button class="btn">Button</button>
-    <input type="button" value="input button" class="btn">
-    <input type="submit" value="submit" class="btn">
     <a href="" class="btn">link button</a>
     
     <button class="btn-large">Button</button>
-    <input type="button" value="input button" class="btn-large">
-    <input type="submit" value="submit" class="btn-large">
     <a href="" class="btn-large">link button</a>
     
     <button class="btn-block">Button</button>
-    <input type="button" value="input button" class="btn-block">
-    <input type="submit" value="submit" class="btn-block">
     <a href="" class="btn-block">link button</a>
 
     <!-- Description list -->
@@ -89,11 +82,11 @@
     <form class="clearfix">
       <p>All inputs must have the required property.</p>
       <div class="form-group">
-        <input type="text" id="name" required>
+        <input type="text" id="name">
         <label for="name">Name</label>
       </div>
       <div class="form-group">
-        <textarea id="comment" required></textarea>
+        <textarea id="comment"></textarea>
         <label for="comment">Comment</label>
       </div>
       <div class="form-group pull-right">
