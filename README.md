@@ -1,5 +1,5 @@
-# Gentle Material
-A lightweight and responsive Material Design CSS Framework
+# Gentleman
+A gentle, lightweight and responsive Material Design CSS Framework
 
 ## Components
 * Typography
