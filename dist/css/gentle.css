@@ -197,6 +197,31 @@ html {
 a {
   text-decoration: none; }
 
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Thin), url("#../font/roboto/Roboto-Thin.woff2") format("woff2"), url("../font/roboto/Roboto-Thin.woff") format("woff"), url("{$roboto-font-path}Roboto-Thin.ttf") format("truetype");
+  font-weight: 200; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Light), url("../font/roboto/Roboto-Light.woff2") format("woff2"), url("../font/roboto/Roboto-Light.woff") format("woff"), url("../font/roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Regular), url("../font/roboto/Roboto-Regular.woff2") format("woff2"), url("../font/roboto/Roboto-Regular.woff") format("woff"), url("../font/roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Medium), url("../font/roboto/Roboto-Medium.woff2") format("woff2"), url("../font/roboto/Roboto-Medium.woff") format("woff"), url("../font/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Bold), url("../font/roboto/Roboto-Bold.woff2") format("woff2"), url("../font/roboto/Roboto-Bold.woff") format("woff"), url("../font/roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700; }
+
 html {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -214,6 +239,7 @@ body {
   font-size: 1.5em; }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
   margin: 0 0 1rem 0;
   line-height: 1.1; }
 
@@ -344,16 +370,13 @@ dl {
     padding: 0.5rem 3rem;
     font-size: 1.2rem; }
 
-ul, ol {
-  list-style: none; }
-
-ul, ol {
+.list {
   padding: 1rem; }
 
-ul {
+ul.list {
   list-style: circle inside; }
 
-ol {
+ol.list {
   list-style: decimal inside; }
 
 .form-group {
@@ -390,23 +413,22 @@ ol {
     .form-group textarea:focus ~ label,
     .form-group textarea.used ~ label {
       color: #3F51B5;
-      font-size: .8rem;
       top: -1rem; }
-    .form-group input[type=text]:focus, .form-group input[type=text]:valid,
+    .form-group input[type=text]:focus, .form-group input[type=text].used:valid,
     .form-group input[type=email]:focus,
-    .form-group input[type=email]:valid,
+    .form-group input[type=email].used:valid,
     .form-group input[type=number]:focus,
-    .form-group input[type=number]:valid,
+    .form-group input[type=number].used:valid,
     .form-group input[type=password]:focus,
-    .form-group input[type=password]:valid,
+    .form-group input[type=password].used:valid,
     .form-group input[type=search]:focus,
-    .form-group input[type=search]:valid,
+    .form-group input[type=search].used:valid,
     .form-group input[type=tel]:focus,
-    .form-group input[type=tel]:valid,
+    .form-group input[type=tel].used:valid,
     .form-group input[type=url]:focus,
-    .form-group input[type=url]:valid,
+    .form-group input[type=url].used:valid,
     .form-group textarea:focus,
-    .form-group textarea:valid {
+    .form-group textarea.used:valid {
       outline: none;
       border-bottom: 1px solid #3F51B5;
       box-shadow: 0 1px 0 0 #3F51B5; }
@@ -419,11 +441,11 @@ ol {
     .form-group input[type=url] ~ label,
     .form-group textarea ~ label {
       color: #9e9e9e;
-      font-size: 1rem;
-      left: 5px;
+      font-size: .8rem;
+      left: .5rem;
       pointer-events: none;
       position: absolute;
-      top: 5px;
+      top: -1rem;
       transition: 0.3s ease-out all;
       font-weight: normal; }
   .form-group textarea {
@@ -497,7 +519,8 @@ table {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -0.5rem;
-  margin-left: -0.5rem; }
+  margin-left: -0.5rem;
+  margin-bottom: 2rem; }
 
 .row.reverse {
   -webkit-box-orient: horizontal;
@@ -897,5 +920,18 @@ table {
 
 .hide {
   display: none !important; }
+
+.page-footer {
+  margin-top: 0;
+  padding-top: 2rem;
+  background-color: #673AB7; }
+  .page-footer .copy {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    height: 4rem;
+    line-height: 4rem;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-left: 1rem; }
 
 /*# sourceMappingURL=gentle.css.map */

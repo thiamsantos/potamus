@@ -11,15 +11,12 @@ dl {
     font-size: 1.2rem;
   }
 }
-ul, ol {
-  list-style: none;
-}
-ul, ol {
+.list {
   padding: 1rem;
 }
-ul {
+ul.list {
   list-style: circle inside;
 }
-ol {
+ol.list {
   list-style: decimal inside;
 }

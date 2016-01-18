@@ -1,0 +1,14 @@
+.page-footer {
+  margin-top: 0;
+  padding-top: 2rem;
+  background-color: #673AB7;
+  .copy {
+    background-color: rgba(0,0,0,.15);
+    color: rgba(255,255,255,.8);
+    height: 4rem;
+    line-height: 4rem;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-left: 1rem;
+  }
+}

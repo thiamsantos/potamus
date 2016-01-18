@@ -1,14 +1,17 @@
 # Gentleman
 A gentle, lightweight and responsive Material Design CSS Framework
 
-## Components
+## Philosophy
+To create a lightweight framework using just the moderns specs of CSS3 and Vanilla JS.
+
+### Components
 * Typography
 * Blockquote
 * Button
 * List
 * Form
 * Table
-* Grid
+* [Flexbox Grid](http://flexboxgrid.com/)
 * Code
 * Helpers
 * Navbar
