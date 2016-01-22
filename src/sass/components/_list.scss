@@ -20,3 +20,6 @@ ul.list {
 ol.list {
   list-style: decimal inside;
 }
+ul, ol {
+  list-style: none;
+}

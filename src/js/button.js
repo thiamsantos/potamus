@@ -11,6 +11,7 @@ var btnsRipple = function (e) {
     'px';
     target.appendChild(ripple);
   }
+  
   ripple.classList.remove('show');
   var top = e.pageY - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop;
   var left = e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft;
@@ -18,6 +19,6 @@ var btnsRipple = function (e) {
   ripple.style.left = left + 'px';
   ripple.classList.add('show');
   return false;
-} 
+};
 
 document.addEventListener('click', btnsRipple, false);

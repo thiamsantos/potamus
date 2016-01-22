@@ -1,0 +1,14 @@
+.hero {
+  align-items: center;
+  background-color: #9FA8DA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3rem;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  & ~ .navbar {
+    margin-top: -$navbar-height;
+  }
+}

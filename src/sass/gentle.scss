@@ -11,6 +11,7 @@
 @import "components/normalize";
 @import "components/variables";
 @import "components/global";
+@import "components/mixins";
 
 // Components
 @import "components/typography";
@@ -24,3 +25,5 @@
 @import "components/helpers";
 @import "components/navbar";
 @import "components/footer";
+@import "components/hero";
+

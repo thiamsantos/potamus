@@ -6,8 +6,9 @@
   color: #fff;
   cursor: pointer;
   display: block;
-  font-weight: normal;
+  font-weight: 300;
   margin: 1rem 0;
+  min-width: 6.4rem;
   max-width: 100%;
   overflow: hidden;
   outline: none;
@@ -23,15 +24,16 @@
 }
 .btn-small {
   @extend %button;
-  padding: 5px;
+  padding: 0 .8rem;
+  line-height: 2rem;
   width: 120px;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 .btn {
   @extend %button;
-  padding: 10px;
-  width: 200px;
-  font-size: 1.2rem;
+  line-height: 3.6rem;
+  padding: 0 1.6rem;
+  width: 150px;
 }
 .btn-large {
   @extend %button;

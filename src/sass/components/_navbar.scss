@@ -1,0 +1,28 @@
+%navbar {
+  background-color: #3F51B5;
+  @include shadow-1();
+  height: $navbar-height;
+  z-index: 1000;
+
+  ul, ol {
+    line-height: $navbar-height;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+  }
+  a {
+    color: #fff;
+  }
+}
+.navbar {
+  @extend %navbar;
+  position: relative;
+}
+.navbar-fixed {
+  @extend %navbar;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

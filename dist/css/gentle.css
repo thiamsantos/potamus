@@ -224,19 +224,19 @@ a {
 
 html {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.5;
   font-size: 10px; }
-  @media only screen and (min-width: 550px) {
+  @media only screen and (min-width: 600px) {
     html {
       font-size: 12px; } }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 960px) {
     html {
       font-size: 13px; } }
 
 body {
-  font-size: 1.5em; }
+  font-size: 1.5rem; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
@@ -265,14 +265,14 @@ h6 {
   font-size: 1.8rem; }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 0 0 1rem 0; }
 
-a:not(.btn*) {
+a {
   color: #3F51B5; }
-  a:not(.btn*):hover, a:not(.btn*):active {
+  a:hover, a:active {
     color: inherit; }
-  a:not(.btn*):focus {
+  a:focus {
     outline: none; }
 
 em {
@@ -300,8 +300,9 @@ blockquote {
   color: #fff;
   cursor: pointer;
   display: block;
-  font-weight: normal;
+  font-weight: 300;
   margin: 1rem 0;
+  min-width: 6.4rem;
   max-width: 100%;
   overflow: hidden;
   outline: none;
@@ -315,14 +316,15 @@ blockquote {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36); }
 
 .btn-small {
-  padding: 5px;
+  padding: 0 .8rem;
+  line-height: 2rem;
   width: 120px;
-  font-size: 1rem; }
+  font-size: .8rem; }
 
 .btn {
-  padding: 10px;
-  width: 200px;
-  font-size: 1.2rem; }
+  line-height: 3.6rem;
+  padding: 0 1.6rem;
+  width: 150px; }
 
 .btn-large {
   padding: 15px;
@@ -378,6 +380,9 @@ ul.list {
 
 ol.list {
   list-style: decimal inside; }
+
+ul, ol {
+  list-style: none; }
 
 .form-group {
   position: relative;
@@ -456,7 +461,8 @@ table {
   border-collapse: collapse;
   margin: 1rem 0;
   text-align: left;
-  width: 100%; }
+  width: 100%;
+  overflow-x: auto; }
   table thead {
     color: rgba(0, 0, 0, 0.54); }
   table thead tr,
@@ -468,35 +474,35 @@ table {
     padding: 1rem 1.5rem; }
   table.striped tbody tr:nth-child(odd) {
     background-color: #EEEEEE; }
-  @media only screen and (max-width: 550px) {
-    table.responsive {
+  @media only screen and (max-width: 600px) {
+    table {
       display: flex;
       flex-direction: row;
       width: 100%; }
-      table.responsive tr {
+      table tr {
         border-bottom: none; }
-      table.responsive thead tr {
+      table thead tr {
         border-right: 1.5px solid #E0E0E0; }
-      table.responsive tbody {
+      table tbody {
         width: auto;
         overflow-x: auto;
         white-space: nowrap; }
-        table.responsive tbody tr {
+        table tbody tr {
           display: inline-block;
           background-color: transparent !important; }
-      table.responsive th, table.responsive td {
+      table th, table td {
         display: block; }
-      table.responsive th {
+      table th {
         text-align: right; } }
 
 .container {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1600px;
   width: 90%; }
-  @media only screen and (min-width: 550px) {
+  @media only screen and (min-width: 600px) {
     .container {
       width: 85%; } }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 960px) {
     .container {
       width: 70%; } }
 
@@ -921,10 +927,34 @@ table {
 .hide {
   display: none !important; }
 
+.navbar, .navbar-fixed {
+  background-color: #3F51B5;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  height: 5rem;
+  z-index: 1000; }
+  .navbar ul, .navbar-fixed ul, .navbar ol, .navbar-fixed ol {
+    line-height: 5rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap; }
+  .navbar a, .navbar-fixed a {
+    color: #fff; }
+
+.navbar {
+  position: relative; }
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
 .page-footer {
+  background-color: #3F51B5;
+  color: #fff;
   margin-top: 0;
-  padding-top: 2rem;
-  background-color: #673AB7; }
+  padding-top: 2rem; }
   .page-footer .copy {
     background-color: rgba(0, 0, 0, 0.15);
     color: rgba(255, 255, 255, 0.8);
@@ -933,5 +963,18 @@ table {
     margin-bottom: 0;
     overflow: hidden;
     padding-left: 1rem; }
+
+.hero {
+  align-items: center;
+  background-color: #9FA8DA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3rem;
+  min-height: 100vh;
+  position: relative;
+  text-align: center; }
+  .hero ~ .navbar {
+    margin-top: -5rem; }
 
 /*# sourceMappingURL=gentle.css.map */

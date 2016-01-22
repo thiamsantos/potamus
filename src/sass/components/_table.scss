@@ -4,6 +4,7 @@ table {
   margin: 1rem 0;
   text-align: left;
   width: 100%;
+  overflow-x: auto;
   thead {
     color: rgba(0,0,0,.54);
   }
@@ -24,34 +25,32 @@ table {
       background-color: #EEEEEE;
     }
   }
-  @media only screen and (max-width: 550px) {
-    &.responsive {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    tr {
+      border-bottom: none;
+    }
+    thead {
       tr {
-        border-bottom: none;
+        border-right: 1.5px solid #E0E0E0;
       }
-      thead {
-        tr {
-          border-right: 1.5px solid #E0E0E0;
-        }
+    }
+    tbody {
+      width: auto;
+      overflow-x: auto;
+      white-space: nowrap;
+      tr {
+        display: inline-block;
+        background-color: transparent !important;
       }
-      tbody {
-        width: auto;
-        overflow-x: auto;
-        white-space: nowrap;
-        tr {
-          display: inline-block;
-          background-color: transparent !important;
-        }
-      }
-      th, td {
-        display: block;
-      }
-      th {
-        text-align: right;
-      }
+    }
+    th, td {
+      display: block;
+    }
+    th {
+      text-align: right;
     }
   }
 }
