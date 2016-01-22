@@ -1,0 +1,13 @@
+code {
+  background: #F5F5F5;
+  border-left: 3px solid #5C6BC0;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+pre > code {
+  @include shadow-2();
+  display: block;
+  padding: 2rem 0 2rem 2rem;
+  white-space: pre;
+}

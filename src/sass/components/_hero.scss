@@ -8,7 +8,7 @@
   min-height: 100vh;
   position: relative;
   text-align: center;
-  & ~ .navbar {
+}
+.navbar ~ .hero {
     margin-top: -$navbar-height;
   }
-}

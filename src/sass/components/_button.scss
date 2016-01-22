@@ -1,12 +1,8 @@
 %button {
-  background-color: #3F51B5;
   border-radius: 2px;
   border-width: 0;
-  @include shadow-1();
-  color: #fff;
   cursor: pointer;
   display: block;
-  font-weight: 300;
   margin: 1rem 0;
   min-width: 6.4rem;
   max-width: 100%;
@@ -17,32 +13,52 @@
   text-transform: uppercase;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+%button-theme {
+  background-color: #3F51B5;
+  @include shadow-1();
+  color: #fff;
+  font-weight: 300;
   &:hover, &:active {
     background-color: #5C6BC0;
     @include focus-shadow();
   }
 }
+.btn-flat {
+  @extend %button;
+  color: #3F51B5;
+  background-color: transparent;
+  font-weight: 500;
+  line-height: 3.6rem;
+  padding: 0 1.6rem;
+}
 .btn-small {
   @extend %button;
+  @extend %button-theme;
+  font-size: .8rem;
   padding: 0 .8rem;
   line-height: 2rem;
-  width: 120px;
-  font-size: .8rem;
+  min-width: 100px;
+  max-width: 300px;
 }
 .btn {
   @extend %button;
+  @extend %button-theme;
   line-height: 3.6rem;
+  min-width: 100px;
+  max-width: 300px;
   padding: 0 1.6rem;
-  width: 150px;
 }
 .btn-large {
   @extend %button;
+  @extend %button-theme;
   padding: 15px;
   width: 300px;
   font-size: 1.5rem;
 }
 .btn-block {
   @extend %button;
+  @extend %button-theme;
   padding: 15px;
   width: 100%;
   font-size: 1.5rem;
