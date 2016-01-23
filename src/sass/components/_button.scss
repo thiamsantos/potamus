@@ -13,6 +13,10 @@
   text-transform: uppercase;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  & .mdi {
+    font-size: inherit;
+    margin-left: 1rem;
+  }
 }
 %button-theme {
   background-color: #3F51B5;
@@ -54,14 +58,14 @@
   @extend %button-theme;
   padding: 15px;
   width: 300px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .btn-block {
   @extend %button;
   @extend %button-theme;
   padding: 15px;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .ripple {
   position: absolute;
