@@ -2,7 +2,7 @@
 A gentle, lightweight and responsive Material Design CSS Framework
 
 ## Philosophy
-To create a lightweight framework using just the moderns specs of CSS3 and Vanilla JS.
+To create a lightweight framework using just the moderns specs of CSS3 ~~and Vanilla JS~~.
 
 ### Components
 * Typography
@@ -16,3 +16,4 @@ To create a lightweight framework using just the moderns specs of CSS3 and Vanil
 * Helpers
 * Navbar
 * Footer
+* [Font Icons](https://materialdesignicons.com/)
