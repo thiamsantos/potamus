@@ -24,8 +24,8 @@
     }
     &:focus, &.used:valid {
       outline:none;
-      border-bottom: 1px solid #3F51B5;
-      box-shadow: 0 1px 0 0 #3F51B5;
+      border-bottom: 1px solid $primary-color;
+      box-shadow: 0 1px 0 0 $primary-color;
     }
     & ~ label {
       color: #9e9e9e;

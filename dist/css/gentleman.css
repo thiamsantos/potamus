@@ -1,5 +1,5 @@
 /*!
- * Gentle v0.0.1 (https://github.com/thiamsantos/gentle)
+ * Gentleman v0.0.1 (https://github.com/thiamsantos/gentle)
  * Copyright 2016 Thiago Santos(https://github.com/thiamsantos).
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -270,8 +270,6 @@ p {
 
 a {
   color: #3F51B5; }
-  a:hover, a:active {
-    color: inherit; }
   a:focus {
     outline: none; }
 
@@ -488,7 +486,7 @@ table {
     padding: 1rem 1.5rem; }
   table.striped tbody tr:nth-child(odd) {
     background-color: #EEEEEE; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (min-width: 600px) {
     table {
       display: flex;
       flex-direction: row;
@@ -521,7 +519,6 @@ table {
       width: 70%; } }
 
 .row {
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -689,7 +686,7 @@ table {
   -ms-flex-order: 1;
   order: 1; }
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 600px) {
   .col.m1,
   .col.m2,
   .col.m3,
@@ -802,7 +799,7 @@ table {
     -ms-flex-order: 1;
     order: 1; } }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 960px) {
   .col.l1,
   .col.l2,
   .col.l3,
@@ -985,13 +982,14 @@ pre > code {
   .page-footer .copy {
     background-color: rgba(0, 0, 0, 0.15);
     color: rgba(255, 255, 255, 0.8);
-    height: 4rem;
+    font-size: inherit;
     line-height: 4rem;
     margin-bottom: 0;
     overflow: hidden;
     padding-left: 1rem; }
 
 .hero {
+  -ms-flex-align: center;
   align-items: center;
   background-color: #9FA8DA;
   display: flex;
@@ -5415,4 +5413,4 @@ pre > code {
 .mdi-light.mdi-inactive {
   color: rgba(255, 255, 255, 0.3); }
 
-/*# sourceMappingURL=gentle.css.map */
+/*# sourceMappingURL=gentleman.css.map */

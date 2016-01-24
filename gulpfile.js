@@ -8,39 +8,39 @@ var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var jshint = require('gulp-jshint');
 
-var sassGentle = "./src/sass/gentle.scss";
+var sassGentleman = "./src/sass/gentleman.scss";
 var sassComponents = "./src/sass/**";
-var jsGentle = "./src/js/**";
+var jsGentleman = "./src/js/**";
 
 // Sass task
 gulp.task('sass-task', function() {
-  gulp.src(sassGentle)
+  gulp.src(sassGentleman)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css/'));
-  gulp.src(sassGentle)
+  gulp.src(sassGentleman)
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(rename('gentle.min.css'))
+    .pipe(rename('gentleman.min.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css/'));
 });
 
 // Javascript task
 // gulp.task('js-task', function() {
-//   gulp.src(jsGentle)
+//   gulp.src(jsGentleman)
 //     .pipe(jshint())
 //     .pipe(jshint.reporter('default'))
 //     .pipe(sourcemaps.init())
-//     .pipe(concat('gentle.js'))
+//     .pipe(concat('gentleman.js'))
 //     .pipe(sourcemaps.write('./'))
 //     .pipe(gulp.dest('./dist/js/'));
-//   gulp.src(jsGentle)
+//   gulp.src(jsGentleman)
 //     .pipe(sourcemaps.init())
 //     .pipe(concat('gentle.js'))
 //     .pipe(uglify().on('error', gutil.log))
-//     .pipe(rename('gentle.min.js'))
+//     .pipe(rename('gentleman.min.js'))
 //     .pipe(sourcemaps.write('.'))
 //     .pipe(gulp.dest('./dist/js/'));
 // });
@@ -49,13 +49,13 @@ gulp.task('sass-task', function() {
 gulp.task('default', function() {
   gulp.run('sass-task');
 
-  watch(sassGentle, function(){
+  watch(sassGentleman, function(){
     gulp.run('sass-task');
   });
   watch(sassComponents, function(){
     gulp.run('sass-task');
   });
-  // watch(jsGentle, function(){
+  // watch(jsGentleman, function(){
   //   gulp.run('js-task');
   // });
 });

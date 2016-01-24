@@ -19,12 +19,12 @@
   }
 }
 %button-theme {
-  background-color: #3F51B5;
+  background-color: $primary-color;
   @include shadow-1();
   color: #fff;
   font-weight: 300;
   &:hover, &:active {
-    background-color: #5C6BC0;
+    background-color: $primary-color-light;
     @include focus-shadow();
   }
 }

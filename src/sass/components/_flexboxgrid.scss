@@ -2,16 +2,15 @@
   margin: 0 auto;
   max-width: 1600px;
   width: 90%;
-  @media only screen and (min-width: 600px) {
+  @media #{$medium-devices} {
     width: 85%;
   }
-  @media only screen and (min-width: 960px) {
+  @media #{$large-devices} {
     width: 70%;
   }
 }
 
 .row {
-  box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -203,7 +202,7 @@
   order: 1;
 }
 
-@media only screen and (min-width: 550px) {
+@media #{$medium-devices} {
   .col.m1,
   .col.m2,
   .col.m3,
@@ -358,7 +357,7 @@
     order: 1;
   }
 }
-@media only screen and (min-width: 900px) {
+@media #{$large-devices} {
   .col.l1,
   .col.l2,
   .col.l3,

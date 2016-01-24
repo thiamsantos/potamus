@@ -44,10 +44,10 @@ html {
   color: rgba(0,0,0,.87);
   line-height: 1.5;
   font-size: 10px;
-  @media only screen and (min-width: 600px) {
+  @media #{$medium-devices} {
     font-size: 11px;
   }
-  @media only screen and (min-width: 960px) {
+  @media #{$large-devices} {
     font-size: 12px;
   }
 }
@@ -85,10 +85,7 @@ p {
   margin: 0 0 1rem 0;
 }
 a {
-  color: #3F51B5;
-  &:hover, &:active {
-    color: inherit;
-  }
+  color: $primary-color;
   &:focus {
     outline: none;
   }

@@ -1,5 +1,5 @@
 %navbar {
-  background-color: #3F51B5;
+  background-color: $primary-color;
   @include shadow-1();
   height: $navbar-height;
   z-index: 1000;
