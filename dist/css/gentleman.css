@@ -199,7 +199,7 @@ a {
 
 @font-face {
   font-family: "Roboto";
-  src: local(Roboto Thin), url("#../font/roboto/Roboto-Thin.woff2") format("woff2"), url("../font/roboto/Roboto-Thin.woff") format("woff"), url("{$roboto-font-path}Roboto-Thin.ttf") format("truetype");
+  src: local(Roboto Thin), url("../font/roboto/Roboto-Thin.woff2") format("woff2"), url("../font/roboto/Roboto-Thin.woff") format("woff"), url("../font/roboto/Roboto-Thin.ttf") format("truetype");
   font-weight: 200; }
 
 @font-face {
@@ -989,7 +989,6 @@ pre > code {
     padding-left: 1rem; }
 
 .hero {
-  -ms-flex-align: center;
   align-items: center;
   background-color: #9FA8DA;
   display: flex;

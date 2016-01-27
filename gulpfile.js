@@ -7,10 +7,24 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var jshint = require('gulp-jshint');
+var csscss = require('gulp-csscss');
+var browserSync = require('browser-sync').create();
 
 var sassGentleman = "./src/sass/gentleman.scss";
 var sassComponents = "./src/sass/**";
 var jsGentleman = "./src/js/**";
+
+// Server task
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  });
+
+  watch("./*.html").on('change', browserSync.reload);
+  watch("./dist/**").on('change', browserSync.reload);
+});
 
 // Sass task
 gulp.task('sass-task', function() {
@@ -24,7 +38,8 @@ gulp.task('sass-task', function() {
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(rename('gentleman.min.css'))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dist/css/'));
+    .pipe(gulp.dest('./dist/css/'))
+    .pipe(browserSync.stream());
 });
 
 // Javascript task
@@ -42,12 +57,23 @@ gulp.task('sass-task', function() {
 //     .pipe(uglify().on('error', gutil.log))
 //     .pipe(rename('gentleman.min.js'))
 //     .pipe(sourcemaps.write('.'))
-//     .pipe(gulp.dest('./dist/js/'));
+//     .pipe(gulp.dest('./dist/js/'))
+//     .pipe(browserSync.stream());
 // });
+
+// Test of css
+gulp.task('csscss', function() {
+  gulp.src(sassGentleman)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(csscss())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./dist/css/'))
+});
 
 // Default task
 gulp.task('default', function() {
-  gulp.run('sass-task');
+  gulp.run('sass-task', 'browser-sync');
 
   watch(sassGentleman, function(){
     gulp.run('sass-task');
