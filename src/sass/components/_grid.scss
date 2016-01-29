@@ -1,0 +1,219 @@
+.container {
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 90%;
+  @media #{$medium-devices} {
+    width: 85%;
+  }
+  @media #{$large-devices} {
+    width: 70%;
+  }
+}
+
+.row {
+  @extend %flexbox;
+  @include flex(0 1 auto);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-bottom: 2rem;
+}
+
+.row.reverse {
+  @include flex-direction(row-reverse);
+}
+
+.col.reverse {
+  @include flex-direction(column-reverse);
+}
+
+.col {
+  $i: 1;
+  @while $i <= $num-cols {
+    $perc: unquote((100 / ($num-cols / $i)) + "%");
+    &.s#{$i} {
+      @include flex(0 0 $perc);
+      max-width: $perc;
+      @extend %col-padding;
+    }
+    @if $i != $num-cols {
+      &.offset-s#{$i} {
+        @include flex(0 0 auto);
+        margin-left: $perc;
+        @extend %col-padding;
+      }
+    }
+    $i: $i + 1;
+  }
+}
+
+.start-s {
+  @include justify-content(flex-start);
+  text-align: start;
+}
+
+.center-s {
+  @include justify-content(center);
+  text-align: center;
+}
+
+.end-s {
+  @include justify-content(flex-end);
+  text-align: end;
+}
+
+.top-s {
+  @include align-items(flex-start);
+}
+
+.middle-s {
+  @include align-items(center);
+}
+
+.bottom-s {
+  @include align-items(flex-end);
+}
+
+.around-s {
+  @include justify-content(space-around);
+}
+
+.between-s {
+  @include justify-content(space-between);
+}
+
+.first-s {
+  @include order(-1);
+}
+
+.last-s {
+  @include order(1);
+}
+
+@media #{$medium-devices} {
+
+  .col {
+    $i: 1;
+    @while $i <= $num-cols {
+      $perc: unquote((100 / ($num-cols / $i)) + "%");
+      &.m#{$i} {
+        @include flex(0 0 $perc);
+        max-width: $perc;
+      }
+      @if $i != $num-cols {
+        &.offset-m#{$i} {
+          @include flex(0 0 auto);
+          margin-left: $perc;
+        }
+      }
+      $i: $i + 1;
+    }
+  }
+
+  .start-m {
+    @include justify-content(flex-start);
+    text-align: start;
+  }
+
+  .center-m {
+    @include justify-content(center);
+    text-align: center;
+  }
+
+  .end-m {
+    @include justify-content(flex-end);
+    text-align: end;
+  }
+
+  .top-m {
+    @include align-items(flex-start);
+  }
+
+  .middle-m {
+    @include align-items(center);
+  }
+
+  .bottom-m {
+    @include align-items(flex-end);
+  }
+
+  .around-m {
+    @include justify-content(space-around);
+  }
+
+  .between-m {
+    @include justify-content(space-between);
+  }
+
+  .first-m {
+    @include order(-1);
+  }
+
+  .last-m {
+    @include order(1);
+  }
+}
+@media #{$large-devices} {
+
+  .col {
+    $i: 1;
+    @while $i <= $num-cols {
+      $perc: unquote((100 / ($num-cols / $i)) + "%");
+      &.l#{$i} {
+        @include flex(0 0 $perc);
+        max-width: $perc;
+      }
+      @if $i != $num-cols {
+        &.offset-l#{$i} {
+          @include flex(0 0 auto);
+          margin-left: $perc;
+        }
+      }
+      $i: $i + 1;
+    }
+  }
+
+  .start-l {
+    @include justify-content(flex-start);
+    text-align: start;
+  }
+
+  .center-l {
+    @include justify-content(center);
+    text-align: center;
+  }
+
+  .end-l {
+    @include justify-content(flex-end);
+    text-align: end;
+  }
+
+  .top-l {
+    @include align-items(flex-start);
+  }
+
+  .middle-l {
+    @include align-items(center);
+  }
+
+  .bottom-l {
+    @include align-items(flex-end);
+  }
+
+  .around-l {
+    @include justify-content(space-around);
+  }
+
+  .between-l {
+    @include justify-content(space-between);
+  }
+
+  .first-l {
+    @include order(-1);
+  }
+
+  .last-l {
+    @include order(1);
+  }
+}

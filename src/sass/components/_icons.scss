@@ -55,8 +55,6 @@ $names: 'access-point' 'access-point-network' 'account' 'account-alert' 'account
     }
 }
 
-.#{$mdi-css-prefix}-inactive { color: $mdi-color-inactive; }
+.#{$mdi-css-prefix}-inactive { opacity: 0.5; }
 .#{$mdi-css-prefix}-dark { color: rgba(0, 0, 0, 0.87); }
-.#{$mdi-css-prefix}-dark.mdi-inactive { color: rgba(0, 0, 0, 0.54); }
 .#{$mdi-css-prefix}-light { color: #fff; }
-.#{$mdi-css-prefix}-light.mdi-inactive { color: rgba(255, 255, 255, 0.3); }

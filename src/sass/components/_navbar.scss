@@ -6,10 +6,10 @@
 
   ul, ol {
     line-height: $navbar-height;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
+    @include align-items(center);
+    @extend %flexbox;
+    @include justify-content(space-around);
+    @include flex-flow(row wrap);
   }
   a {
     color: #fff;

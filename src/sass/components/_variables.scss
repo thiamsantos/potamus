@@ -33,3 +33,6 @@ $mdi-version:          "1.4.57" !default;
 // Media Queries
 $medium-devices: "only screen and (min-width: 600px)";
 $large-devices: "only screen and (min-width: 960px)";
+
+// Number of the columns on grid
+$num-cols: 6;
