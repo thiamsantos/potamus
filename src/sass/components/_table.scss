@@ -1,6 +1,5 @@
 table {
   @include shadow-1();
-  border-collapse: collapse;
   margin: 1rem 0;
   text-align: left;
   width: 100%;
@@ -30,9 +29,10 @@ table {
     @include flex-direction(row);
     width: 100%;
     tr {
-      border-bottom: none;
+      border-bottom: none !important;
     }
     thead {
+      float: left;
       tr {
         border-right: 1.5px solid #E0E0E0;
       }

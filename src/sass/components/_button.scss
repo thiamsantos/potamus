@@ -23,7 +23,7 @@
   @include shadow-1();
   color: #fff;
   font-weight: 300;
-  &:hover, &:active {
+  &:hover {
     background-color: $primary-color-light;
     @include focus-shadow();
   }

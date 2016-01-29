@@ -1,9 +1,9 @@
 .hero {
   align-items: center;
   background-color: $hero-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @extend %flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
   margin-bottom: 3rem;
   min-height: 100vh;
   position: relative;

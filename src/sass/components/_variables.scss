@@ -34,5 +34,6 @@ $mdi-version:          "1.4.57" !default;
 $medium-devices: "only screen and (min-width: 600px)";
 $large-devices: "only screen and (min-width: 960px)";
 
-// Number of the columns on grid
-$num-cols: 6;
+// Grid
+$num-cols: 6;// Number of the columns on grid
+$gutter-width: 1rem;

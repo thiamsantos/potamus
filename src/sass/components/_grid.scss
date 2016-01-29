@@ -15,9 +15,7 @@
   @include flex(0 1 auto);
   @include flex-direction(row);
   @include flex-wrap(wrap);
-  margin-right: -0.5rem;
-  margin-left: -0.5rem;
-  margin-bottom: 2rem;
+  margin: 0 -0.5rem 1rem -0.5rem;
 }
 
 .row.reverse {
@@ -29,19 +27,19 @@
 }
 
 .col {
+  padding: 0 ($gutter-width / 2);
+
   $i: 1;
   @while $i <= $num-cols {
-    $perc: unquote((100 / ($num-cols / $i)) + "%");
+    $perc: 100% / ($num-cols / $i);
     &.s#{$i} {
       @include flex(0 0 $perc);
       max-width: $perc;
-      @extend %col-padding;
     }
     @if $i != $num-cols {
       &.offset-s#{$i} {
         @include flex(0 0 auto);
         margin-left: $perc;
-        @extend %col-padding;
       }
     }
     $i: $i + 1;
@@ -96,7 +94,7 @@
   .col {
     $i: 1;
     @while $i <= $num-cols {
-      $perc: unquote((100 / ($num-cols / $i)) + "%");
+      $perc: 100% / ($num-cols / $i);
       &.m#{$i} {
         @include flex(0 0 $perc);
         max-width: $perc;
@@ -159,7 +157,7 @@
   .col {
     $i: 1;
     @while $i <= $num-cols {
-      $perc: unquote((100 / ($num-cols / $i)) + "%");
+      $perc: 100% / ($num-cols / $i);
       &.l#{$i} {
         @include flex(0 0 $perc);
         max-width: $perc;
