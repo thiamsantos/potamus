@@ -1,15 +1,15 @@
 %navbar {
-  background-color: $primary-color;
   @include shadow-1();
+  background-color: $primary-color;
   height: $navbar-height;
   z-index: 1000;
 
   ul, ol {
-    line-height: $navbar-height;
-    @include align-items(center);
     @extend %flexbox;
+    @include align-items(center);
     @include justify-content(space-around);
     @include flex-flow(row wrap);
+    line-height: $navbar-height;
   }
   a {
     color: #fff;

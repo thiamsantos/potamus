@@ -26,3 +26,14 @@
 .hide {
   display: none !important;
 }
+.hide-small {
+  @media only screen and (max-width: 600px) {
+    display: none !important;
+  }
+}
+em {
+  font-style: italic;
+}
+.underline {
+  font-style: underline;
+}

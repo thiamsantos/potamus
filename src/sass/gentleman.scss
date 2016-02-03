@@ -3,28 +3,36 @@
  * Copyright 2016 Thiago Santos(https://github.com/thiamsantos).
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-/*! Flexbox Grid (http://flexboxgrid.com/) | Apache License, Version 2.0 | Copyright 2013 Kristofer Joseph */
 
 @charset "UTF-8";
 
-// Dependencies
-@import "components/normalize";
-@import "components/variables";
-@import "components/global";
-@import "components/mixins";
-@import "components/flexbox";
+// Settings
+@import "settings/variables";
+
+// Tools
+@import "tools/flexbox";
+@import "tools/mixins";
+
+// Generic
+@import "generic/global";
+
+// Elements
+@import "elements/blockquote";
+@import "elements/code";
+@import "elements/list";
+@import "elements/table";
+@import "elements/typography";
+
+// Objects
+@import "objects/button";
+@import "objects/form";
+@import "objects/grid";
+@import "objects/icons";
 
 // Components
-@import "components/typography";
-@import "components/blockquote";
-@import "components/button";
-@import "components/list";
-@import "components/form";
-@import "components/table";
-@import "components/grid";
-@import "components/code";
-@import "components/helpers";
 @import "components/navbar";
 @import "components/footer";
 @import "components/hero";
-@import "components/icons";
+
+// Trumps
+@import "trumps/helpers";

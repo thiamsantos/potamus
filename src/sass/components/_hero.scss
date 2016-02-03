@@ -1,11 +1,11 @@
 .hero {
-  align-items: center;
-  background-color: $hero-color;
   @extend %flexbox;
   @include flex-direction(column);
   @include justify-content(center);
+  align-items: center;
+  background-color: $hero-color;
+  height: 100vh;
   margin-bottom: 3rem;
-  min-height: 100vh;
   position: relative;
   text-align: center;
 }
