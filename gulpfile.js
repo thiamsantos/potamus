@@ -9,6 +9,7 @@ var gutil = require('gulp-util');
 var jshint = require('gulp-jshint');
 var csscss = require('gulp-csscss');
 var browserSync = require('browser-sync').create();
+var autoprefixer = require('gulp-autoprefixer');
 
 var sassGentleman = "./src/sass/gentleman.scss";
 var sassComponents = "./src/sass/**";
@@ -31,11 +32,13 @@ gulp.task('sass-task', function() {
   gulp.src(sassGentleman)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css/'));
   gulp.src(sassGentleman)
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(autoprefixer())
     .pipe(rename('gentleman.min.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css/'))
@@ -66,6 +69,7 @@ gulp.task('csscss', function() {
   gulp.src(sassGentleman)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(csscss())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css/'))

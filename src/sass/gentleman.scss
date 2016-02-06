@@ -1,5 +1,6 @@
 /*!
- * Gentleman v0.0.1 (https://github.com/thiamsantos/gentle)
+ * Gentleman v0.0.1 (https://github.com/thiamsantos/gentleman)
+ * MIT License (https://github.com/thiamsantos/gentleman/LICENSE)
  * Copyright 2016 Thiago Santos(https://github.com/thiamsantos).
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -7,6 +8,7 @@
 @charset "UTF-8";
 
 // Settings
+@import "settings/color";
 @import "settings/variables";
 
 // Tools

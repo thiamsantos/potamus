@@ -12,33 +12,37 @@
 
 .row {
   @extend %flexbox;
-  @include flex(0 1 auto);
-  @include flex-direction(row);
-  @include flex-wrap(wrap);
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 0 -0.5rem 1rem -0.5rem;
 }
 
 .row.reverse {
-  @include flex-direction(row-reverse);
+  flex-direction: row-reverse;
 }
 
 .col.reverse {
-  @include flex-direction(column-reverse);
+  flex-direction: column-reverse;
 }
 
 .col {
   padding: 0 ($gutter-width / 2);
 
+  &.s--fit {
+    flex: 1;
+  }
+
   $i: 1;
   @while $i <= $num-cols {
     $perc: 100% / ($num-cols / $i);
     &.s#{$i} {
-      @include flex(0 0 $perc);
-      max-width: $perc;
+      flex: 0 0 $perc;
+      //max-width: $perc;
     }
     @if $i != $num-cols {
       &.offset-s#{$i} {
-        @include flex(0 0 auto);
+        flex: 0 0 auto;
         margin-left: $perc;
       }
     }
@@ -47,61 +51,66 @@
 }
 
 .start-s {
-  @include justify-content(flex-start);
+  justify-content: flex-start;
   text-align: start;
 }
 
 .center-s {
-  @include justify-content(center);
+  justify-content: center;
   text-align: center;
 }
 
 .end-s {
-  @include justify-content(flex-end);
+  justify-content: flex-end;
   text-align: end;
 }
 
 .top-s {
-  @include align-items(flex-start);
+  align-items: flex-start;
 }
 
 .middle-s {
-  @include align-items(center);
+  align-items: center;
 }
 
 .bottom-s {
-  @include align-items(flex-end);
+  align-items: flex-end;
 }
 
 .around-s {
-  @include justify-content(space-around);
+  justify-content: space-around;
 }
 
 .between-s {
-  @include justify-content(space-between);
+  justify-content: space-between;
 }
 
 .first-s {
-  @include order(-1);
+  order: -1;
 }
 
 .last-s {
-  @include order(1);
+  order: 1;
 }
 
 @media #{$medium-devices} {
 
   .col {
+
+    &.m--fit {
+      flex: 1;
+    }
+
     $i: 1;
     @while $i <= $num-cols {
       $perc: 100% / ($num-cols / $i);
       &.m#{$i} {
-        @include flex(0 0 $perc);
-        max-width: $perc;
+        flex: 0 0 $perc;
+        //max-width: $perc;
       }
       @if $i != $num-cols {
         &.offset-m#{$i} {
-          @include flex(0 0 auto);
+          flex: 0 0 auto;
           margin-left: $perc;
         }
       }
@@ -110,61 +119,65 @@
   }
 
   .start-m {
-    @include justify-content(flex-start);
+    justify-content: flex-start;
     text-align: start;
   }
 
   .center-m {
-    @include justify-content(center);
+    justify-content: center;
     text-align: center;
   }
 
   .end-m {
-    @include justify-content(flex-end);
+    justify-content: flex-end;
     text-align: end;
   }
 
   .top-m {
-    @include align-items(flex-start);
+    align-items: flex-start;
   }
 
   .middle-m {
-    @include align-items(center);
+    align-items: center;
   }
 
   .bottom-m {
-    @include align-items(flex-end);
+    align-items: flex-end;
   }
 
   .around-m {
-    @include justify-content(space-around);
+    justify-content: space-around;
   }
 
   .between-m {
-    @include justify-content(space-between);
+    justify-content: space-between;
   }
 
   .first-m {
-    @include order(-1);
+    order: -1;
   }
 
   .last-m {
-    @include order(1);
+    order: 1;
   }
 }
 @media #{$large-devices} {
 
   .col {
+    &.l--fit {
+      flex: 1;
+    }
+
     $i: 1;
     @while $i <= $num-cols {
       $perc: 100% / ($num-cols / $i);
       &.l#{$i} {
-        @include flex(0 0 $perc);
-        max-width: $perc;
+        flex: 0 0 $perc;
+        //max-width: $perc;
       }
       @if $i != $num-cols {
         &.offset-l#{$i} {
-          @include flex(0 0 auto);
+          flex: 0 0 auto;
           margin-left: $perc;
         }
       }
@@ -173,45 +186,45 @@
   }
 
   .start-l {
-    @include justify-content(flex-start);
+    justify-content: flex-start;
     text-align: start;
   }
 
   .center-l {
-    @include justify-content(center);
+    justify-content: center;
     text-align: center;
   }
 
   .end-l {
-    @include justify-content(flex-end);
+    justify-content: flex-end;
     text-align: end;
   }
 
   .top-l {
-    @include align-items(flex-start);
+    align-items: flex-start;
   }
 
   .middle-l {
-    @include align-items(center);
+    align-items: center;
   }
 
   .bottom-l {
-    @include align-items(flex-end);
+    align-items: flex-end;
   }
 
   .around-l {
-    @include justify-content(space-around);
+    justify-content: space-around;
   }
 
   .between-l {
-    @include justify-content(space-between);
+    justify-content: space-between;
   }
 
   .first-l {
-    @include order(-1);
+    order: -1;
   }
 
   .last-l {
-    @include order(1);
+    order: 1;
   }
 }

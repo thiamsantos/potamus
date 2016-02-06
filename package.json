@@ -11,10 +11,11 @@
     "url": "git@github.com:thiamsantos/gentleman.git"
   },
   "author": "Thiago Santos",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csscss": "^0.1.2",
     "gulp-jshint": "^2.0.0",

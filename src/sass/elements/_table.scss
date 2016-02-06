@@ -25,8 +25,8 @@ table {
     }
   }
   @media only screen and (max-width: 600px) {
-    @include flexbox();
-    @include flex-direction(row);
+    display: flex;
+    flex-direction: row;
     width: 100%;
     tr {
       border-bottom: none !important;
