@@ -1,32 +1,32 @@
-.disabled {
+.u-disabled {
   pointer-events: none;
 }
-.pull-right {
+.u-pull-right {
   float: right !important;
 }
-.pull-left {
+.u-pull-left {
   float: left !important;
 }
-.clearfix {
+.u-clearfix {
   &:after, &:before {
     content: '';
     display: table;
     clear: both;
   }
 }
-.right-align {
+.u-right-align {
   text-align: right;
 }
-.left-align {
+.u-left-align {
   text-align: left;
 }
-.center-align {
+.u-center-align {
   text-align: center;
 }
-.hide {
+.u-hide {
   display: none !important;
 }
-.hide-small {
+.u-hide-small {
   @media only screen and (max-width: 600px) {
     display: none !important;
   }
@@ -34,6 +34,6 @@
 em {
   font-style: italic;
 }
-.underline {
+.u-underline {
   font-style: underline;
 }

@@ -1,4 +1,4 @@
-.hero {
+.c-hero {
   @extend %flexbox;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +9,6 @@
   position: relative;
   text-align: center;
 }
-.navbar ~ .hero {
-    margin-top: -$navbar-height;
-  }
+.c-navbar ~ .c-hero {
+  margin-top: -$navbar-height;
+}

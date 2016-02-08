@@ -10,6 +10,7 @@
 // Settings
 @import "settings/color";
 @import "settings/variables";
+@import "settings/icons";
 
 // Tools
 @import "tools/flexbox";
@@ -35,6 +36,27 @@
 @import "components/navbar";
 @import "components/footer";
 @import "components/hero";
+@import "components/button";
 
 // Trumps
 @import "trumps/helpers";
+
+// [class^="o-"],
+// [class*=" o-"] {
+//   outline: 5px solid orange;
+// }
+
+// [class^="c-"],
+// [class*=" c-"] {
+//   outline: 5px solid cyan;
+// }
+
+// [class^="u-"],
+// [class*=" u-"] {
+//   outline: 5px solid violet;
+// }
+
+// [class^="_"],
+// [class*=" _"] {
+//   outline: 5px solid red;
+// }

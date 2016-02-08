@@ -15,11 +15,11 @@
     color: #fff;
   }
 }
-.navbar {
+.c-navbar {
   @extend %navbar;
   position: relative;
 }
-.navbar-fixed {
+.c-navbar--fixed {
   @extend %navbar;
   position: fixed;
   top: 0;
