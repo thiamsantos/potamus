@@ -47,7 +47,7 @@ time, mark, audio, video {
   box-sizing: inherit;
   font-size: inherit;
 }
-[tabindex="-1"]:focus {
+:focus {
   outline: none !important;
 }
 

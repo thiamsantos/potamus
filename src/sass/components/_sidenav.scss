@@ -1,0 +1,30 @@
+%c-sidenav__item {
+  line-height: 5rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.c-sidenav {
+  @extend %flexbox;
+  @include shadow-4();
+  background-color: white;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 80%;
+  z-index: 10;
+  &__link {
+    @extend %c-sidenav__item;
+    color: rgba(0,0,0,.54);
+    font-size: 1.8rem;
+  }
+  &__title {
+    @extend %c-sidenav__item;
+    color: rgba(0,0,0,.87);
+    font-size: 2rem;
+    pointer-events: none;
+  }
+}

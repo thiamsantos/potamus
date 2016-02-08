@@ -32,7 +32,7 @@ gulp.task('sass-task', function() {
   gulp.src(sassGentleman)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({cascade: false}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css/'));
   gulp.src(sassGentleman)

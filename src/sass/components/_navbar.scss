@@ -1,19 +1,12 @@
 %navbar {
+  @extend %flexbox;
   @include shadow-1();
+  align-items: center;
   background-color: $primary-color;
+  flex-flow: row wrap;
   height: $navbar-height;
-  z-index: 1000;
-
-  ul, ol {
-    @extend %flexbox;
-    align-items: center;
-    justify-content: space-around;
-    flex-flow: row wrap;
-    line-height: $navbar-height;
-  }
-  a {
-    color: #fff;
-  }
+  justify-content: space-around;
+  z-index: 8;
 }
 .c-navbar {
   @extend %navbar;
@@ -25,4 +18,11 @@
   top: 0;
   left: 0;
   width: 100%;
+}
+.c-navbar__link {
+  color: #fff;
+}
+.c-navbar__brand {
+  height: $navbar-height;
+  padding: 1%;
 }
