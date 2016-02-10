@@ -331,8 +331,7 @@ $colors: (
   "grey": $grey
 );
 
-// usage: color("name_of_color", "type_of_color")
-// to avoid to repeating map-get($colors, ...)
+// usage: color("name_of_color", number_of_color)
 
 @function color($color, $type) {
   @if map-has-key($colors, $color) {
