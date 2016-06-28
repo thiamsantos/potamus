@@ -1,20 +1,11 @@
 # Gentleman
-A gentle, lightweight and responsive Material Design CSS Framework
+A lightweight and responsive setup of Material Design components writed in stylus.
 
 ## Philosophy
-To create a lightweight framework using just the moderns specs of CSS3 ~~and Vanilla JS~~.
-It follow [ITCSS](http://itcss.io/) css architecture. [BEM](https://en.bem.info/) name convention, using two very useful suffixes __element and --modifier. And it uses [namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/).
+Component Driven Development.
 
-### Components
-* Typography
-* Blockquote
-* Button
-* List
-* Form
-* Table
-* Flexbox Grid
-* Code
-* Helpers
-* Navbar
-* Footer
-* [Font Icons](https://materialdesignicons.com/)
+## Contributing
+- Fork this repo to your own git
+- Make your changes into a new branch
+- Submit a pull request with full remarks documenting your changes
+- Pull request MAY then be accepted
