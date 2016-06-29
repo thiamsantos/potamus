@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thiamsantos/gentleman.git"
+    "url": "git+https://github.com/thiamsantos/potamus.git"
   },
   "keywords": [
     "stylus",
@@ -20,9 +20,9 @@
   "author": "Thiago Santos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thiamsantos/gentleman/issues"
+    "url": "https://github.com/thiamsantos/potamus/issues"
   },
-  "homepage": "https://github.com/thiamsantos/gentleman#readme",
+  "homepage": "https://github.com/thiamsantos/potamus#readme",
   "devDependencies": {
     "autoprefixer-stylus": "^0.9.3",
     "babel-preset-es2015": "^6.9.0",
