@@ -1,6 +1,6 @@
 html
-  font-size 10px
   color rgba(0,0,0,.87)
+  font-size 10px
   @media screen and (min-width: 600px)
     font-size 10.5px
 
@@ -8,7 +8,7 @@ html
     font-size 11px
 
 body
-  font-family "Roboto", sans-serif
+  font-family 'Roboto',sans-serif
   font-size 1.4rem
 
 *
@@ -16,10 +16,9 @@ body
   margin 0
   padding 0
   vertical-align baseline
-
-*
-*:before
-*:after
-  box-sizing inherit
-  font-size inherit
-  font-family inherit
+  &
+  &:before
+  &:after
+    box-sizing inherit
+    font-family inherit
+    font-size inherit

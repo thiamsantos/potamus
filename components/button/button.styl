@@ -1,20 +1,23 @@
-$shadow-key-umbra-opacity = 0.2
-$shadow-key-penumbra-opacity = 0.14
-$shadow-ambient-shadow-opacity = 0.12
+$shadow-key-umbra-opacity = .2
+$shadow-key-penumbra-opacity = .14
+$shadow-ambient-shadow-opacity = .12
 $primary-color = #F44336
+$white = #fff
 
 .c-btn
   background-color $primary-color
   border-radius 2px
   border-width 0
-  box-shadow 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity), 0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity), 0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity)
-  color #fff
+  box-shadow 0 2px 2px 0 rgba(0,0,0,$shadow-key-penumbra-opacity),
+    0 3px 1px -2px rgba(0,0,0,$shadow-key-umbra-opacity),
+    0 1px 5px 0 rgba(0,0,0,$shadow-ambient-shadow-opacity)
+  color $white
   cursor pointer
   display block
   font-weight 500
   height 3.6rem
   line-height 3.6rem
-  outline none
+  outline 0
   overflow hidden
   padding 0 1.6rem
   position relative
@@ -23,13 +26,12 @@ $primary-color = #F44336
   transition all .3s cubic-bezier(0,0,.2,1)
 
 .ripple
-  position absolute
   background rgba(0,0,0,.25)
   border-radius 100%
   pointer-events none
+  position absolute
   transform scale(0)
-  z-index 2
-
+  z-index 5
 
 .ripple.show
   animation ripple .45s ease-out
@@ -37,6 +39,6 @@ $primary-color = #F44336
 
 @keyframes ripple
   to
-    transform scale(1.5)
     opacity 0
+    transform scale(1.5)
 

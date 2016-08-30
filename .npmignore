@@ -1,5 +1,6 @@
 node_modules/
-site/
+bin/
 index.html
 .editorconfig
 gulpfile.js
+

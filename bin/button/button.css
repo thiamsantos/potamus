@@ -9,7 +9,7 @@
   font-weight: 500;
   height: 3.6rem;
   line-height: 3.6rem;
-  outline: none;
+  outline: 0;
   overflow: hidden;
   padding: 0 1.6rem;
   position: relative;
@@ -18,37 +18,37 @@
   transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 .ripple {
-  position: absolute;
   background: rgba(0,0,0,0.25);
   border-radius: 100%;
   pointer-events: none;
+  position: absolute;
   transform: scale(0);
-  z-index: 2;
+  z-index: 5;
 }
 .ripple.show {
   animation: ripple 0.45s ease-out;
 }
 @-moz-keyframes ripple {
   to {
-    transform: scale(1.5);
     opacity: 0;
+    transform: scale(1.5);
   }
 }
 @-webkit-keyframes ripple {
   to {
-    transform: scale(1.5);
     opacity: 0;
+    transform: scale(1.5);
   }
 }
 @-o-keyframes ripple {
   to {
-    transform: scale(1.5);
     opacity: 0;
+    transform: scale(1.5);
   }
 }
 @keyframes ripple {
   to {
-    transform: scale(1.5);
     opacity: 0;
+    transform: scale(1.5);
   }
 }

@@ -4,9 +4,9 @@
   width: 100%;
 }
 .c-form-group__label {
-  bottom: 1rem;
-  color: rgba(0,0,0,0.54);
-  font-size: 1.5rem;
+  bottom: 4rem;
+  color: #311b92;
+  font-size: 1.3rem;
   pointer-events: none;
   position: absolute;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
@@ -14,29 +14,29 @@
 .c-form-group__label.is-valid {
   color: #4caf50 !important;
 }
-.c-form-group__label.is-active {
-  bottom: 4rem;
-  color: #311b92;
-  font-size: 1.3rem;
+.c-form-group__label.is-closed {
+  bottom: 1rem;
+  color: rgba(0,0,0,0.54);
+  font-size: 1.5rem;
 }
 .c-form-group__input {
-  border: none;
+  border: 0;
   border-bottom: 0.1rem solid #d2d2d2;
   color: rgba(0,0,0,0.87);
   display: block;
   font-size: 1.5rem;
-  outline: none;
+  outline: 0;
   padding: 1rem 0;
   width: 100%;
 }
 .c-form-group__input:valid {
-  border-bottom: 1px solid #4fc24f;
+  border-bottom: 1px solid #4caf50;
 }
 .c-form-group:before,
 .c-form-group:after {
   background: #311b92;
   bottom: -0.1rem;
-  content: "";
+  content: '';
   height: 0.2rem;
   position: absolute;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
