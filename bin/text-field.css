@@ -9,6 +9,7 @@
   font-size: 1.3rem;
   pointer-events: none;
   position: absolute;
+  -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
 }
 .c-form-group__label.is-valid {
@@ -39,6 +40,7 @@
   content: '';
   height: 0.2rem;
   position: absolute;
+  -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
   width: 0;
 }

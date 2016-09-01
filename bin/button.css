@@ -15,6 +15,7 @@
   position: relative;
   text-align: center;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 .ripple {
@@ -22,33 +23,25 @@
   border-radius: 100%;
   pointer-events: none;
   position: absolute;
-  transform: scale(0);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   z-index: 5;
 }
 .ripple.show {
-  animation: ripple 0.45s ease-out;
-}
-@-moz-keyframes ripple {
-  to {
-    opacity: 0;
-    transform: scale(1.5);
-  }
+  -webkit-animation: ripple 0.45s ease-out;
+          animation: ripple 0.45s ease-out;
 }
 @-webkit-keyframes ripple {
   to {
     opacity: 0;
-    transform: scale(1.5);
-  }
-}
-@-o-keyframes ripple {
-  to {
-    opacity: 0;
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }
 @keyframes ripple {
   to {
     opacity: 0;
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }

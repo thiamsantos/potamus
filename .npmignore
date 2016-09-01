@@ -2,5 +2,6 @@ node_modules/
 bin/
 index.html
 .editorconfig
-gulpfile.js
-
+.babelrc
+.eslintrc.js
+.stylintrc

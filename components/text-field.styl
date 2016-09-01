@@ -1,0 +1,62 @@
+$primary-text-color = rgba(0,0,0,.87)
+$secondary-text-color = rgba(0,0,0,.54)
+$dark-primary-color = #311B92
+$valid-color = #4caf50
+$grey = #d2d2d2
+
+.c-form-group
+  padding-top 2.5rem
+  position relative
+  width 100%
+
+  &__label
+    bottom 4rem
+    color $dark-primary-color
+    font-size 1.3rem
+    pointer-events none
+    position absolute
+    transition .2s cubic-bezier(.4,0,.2,1) all
+
+    &.is-valid
+      color $valid-color !important
+
+    &.is-closed
+      bottom 1rem
+      color $secondary-text-color
+      font-size 1.5rem
+
+  &__input
+    border 0
+    border-bottom .1rem solid $grey
+    color $primary-text-color
+    display block
+    font-size 1.5rem
+    outline 0
+    padding 1rem 0
+    width 100%
+
+    &:valid
+      border-bottom 1px solid $valid-color
+
+  &:before
+  &:after
+    background $dark-primary-color
+    bottom -.1rem
+    content ''
+    height .2rem
+    position absolute
+    transition .2s cubic-bezier(.4,0,.2,1) all
+    width 0
+
+  &:before
+    left 50%
+  &:after
+    right 50%
+
+  &.is-active:before
+  &.is-active:after
+    width 50%
+
+  &.is-valid:before
+  &.is-valid:after
+    background $valid-color
