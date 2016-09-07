@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Potamus - Material Design Components</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="dist/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Potamus</h1>
+
+      <p>A lightweight and responsive setup of Material Design components writed in stylus. Is not always interesting to use in your project a whole framework like Materialize or Material Design Lite. This project aims to provide independent components, which would not change the way you drive your project.</p>
+
+      <p>To use you must install two packages potamus-stylus, that will provide you the stylus mixins, and potamus-js that will provide you the javascript for the components.</p>
+
+      <pre><code>$ npm i -D potamus-js potamus-stylus</code></pre>
+
+      <p>Until now, there are the following components:</p>
+
+      <ul>
+        <li>Button</li>
+        <li>Checkbox</li>
+        <li>Radio</li>
+        <li>Text Field</li>
+      </ul>
+
+    </header>
+
+    <section class="component-doc">
+      <h3 class="component-doc__title">Button</h3>
+
+      <button class="button component-doc__demo">Button</button>
+
+      <h4>HTML:</h4>
+      <pre><code>&lt;button class=&quot;some-awesome-button-class-name&quot;&gt;Button&lt;/button&gt;</code></pre>
+
+      <h4>Stylus:</h4>
+      <pre><code class="stylus">.some-awesome-button-class-name
+  button({
+    background: #E91E63, // background-color of the button
+    color: #fff,         // text-color of the button
+    ripple-name: effect, // class name for the ripple effect
+    js: true             // if true classes needed for js interactions are added
+    width: 300px         // width of the button, can be omitted
+  })</code></pre>
+
+      <h4>JavaScript:</h4>
+
+      <pre><code>potamus.button('some-awesome-button-class-name', 'name-for-ripple-effect-class');</code></pre>
+    </section>
+
+    <section class="component-doc">
+      <h3 class="component-doc__title">Checkbox</h3>
+
+      <div class="component-doc__demo">
+        <input class="checkbox" type="checkbox" checked>
+        <input class="checkbox" type="checkbox">
+        <input class="checkbox" type="checkbox" disabled checked>
+        <input class="checkbox" type="checkbox" disabled>
+      </div>
+
+      <h4>HTML:</h4>
+
+      <pre><code>&lt;input class=&quot;some-awesome-checkbox-class-name&quot; type=&quot;checkbox&quot;&gt;</code></pre>
+
+      <h4>Stylus:</h4>
+
+      <pre><code>.some-awesome-checkbox-class-name
+  checkbox({
+    border-color: #ccc, // border color when the checkbox is unchecked
+    color: #E91E63,     // color when the checkbox is checked
+    size: 40px          // size of the checkbox
+  })</code></pre>
+
+      <h4>JavaScript:</h4>
+
+      <pre><code>potamus.checkbox('some-awesome-checkbox-class-name');</code></pre>
+    </section>
+
+    <section class="component-doc">
+      <h3 class="component-doc__title">Radio</h3>
+      <div class="component-doc__demo">
+        <input class="radio" type="radio" id="first" name="radio">
+        <input class="radio" type="radio" id="second" name="radio">
+      </div>
+
+      <h4>HTML:</h4>
+
+      <pre><code>&lt;input class=&quot;some-awesome-radio-name&quot; type=&quot;radio&quot; id=&quot;first&quot; name=&quot;radio&quot;&gt;
+&lt;input class=&quot;some-awesome-radio-name&quot; type=&quot;radio&quot; id=&quot;second&quot; name=&quot;radio&quot;&gt;</code></pre>
+
+      <h4>Stylus:</h4>
+
+      <pre><code>.some-awesome-radio-name
+    radio({
+      animation-name: radio-fade, // name of the animation of the radio
+      border-color: #9E9E9E,      // border color when the radio is unchecked
+      color: #F44336,             // color when the radio is checked
+      size: 30px                  // size of the checkbox
+    })</code></pre>
+
+      <h4>JavaScript:</h4>
+
+      <p>This component doesn't need javascript.</p>
+    </section>
+
+    <section class="component-doc">
+      <h3 class="component-doc__title">Text Field</h3>
+
+      <div class="component-doc__demo text-field">
+        <input class="text-field__input" type="email" required>
+        <label class="text-field__label">Email</label>
+      </div>
+
+      <h4>HTML:</h4>
+
+      <pre><code>&lt;div class=&quot;some-awesome-text-field-name&quot;&gt;
+  &lt;input class=&quot;some-awesome-text-field-name_sufix-input&quot; type=&quot;text&quot;&gt;
+  &lt;label class=&quot;some-awesome-text-field-name__sufix-label&quot;&gt;Nome&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+      <h4>Stylus:</h4>
+
+      <pre><code>.some-awesome-text-field-name
+  text-field({
+    active-color: #2196F3,                 // color when the input is focused
+    default-color: #9E9E9E,                // color when the input is closed
+    input-name: _sufix-input,              // sufix for input class name
+    js: true,                              // if true classes needed for js
+                                           // // interactions are added
+    label-name: __sufix-label,             // sufix for label class name
+    primary-text-color: rgba(0,0,0,.87),   // color of text on input an label
+    secondary-text-color: rgba(0,0,0,.54), // color of text when label is closed
+    valid-color: #4CAF50                   // color when the input is valid
+  })</code></pre>
+
+      <h4>JavaScript:</h4>
+
+      <pre><code>potamus.textField('some-awesome-text-field-name', '__sufix-label', '_sufix-input');</code></pre>
+
+    </section>
+
+    <script src="dist/js/main.js" async></script>
+  </body>
+</html>
