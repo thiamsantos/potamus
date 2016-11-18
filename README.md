@@ -1,4 +1,5 @@
 # potamus
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![devDependencies Status](https://david-dm.org/thiamsantos/potamus/dev-status.svg)](https://david-dm.org/thiamsantos/potamus?type=dev)
 [![Build Status](https://travis-ci.org/thiamsantos/potamus.svg?branch=master)](https://travis-ci.org/thiamsantos/potamus)
 
