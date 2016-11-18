@@ -1,0 +1,54 @@
+button(options)
+
+  $background = options.background || #f44336
+  $color = options.color || #fff
+
+  $width = options.width
+
+  $ripple-name = options.ripple-name || ripple
+
+  $shadow-key-umbra-opacity = .2
+  $shadow-key-penumbra-opacity = .14
+  $shadow-ambient-shadow-opacity = .12
+
+  background-color $background
+  border-radius 2px
+  border-width 0
+  box-shadow 0 2px 2px 0 rgba(0,0,0,$shadow-key-penumbra-opacity),
+    0 3px 1px -2px rgba(0,0,0,$shadow-key-umbra-opacity),
+    0 1px 5px 0 rgba(0,0,0,$shadow-ambient-shadow-opacity)
+  box-sizing border-box
+  color $color
+  cursor pointer
+  display block
+  font-weight 500
+  height 36px
+  line-height 36px
+  margin 0
+  outline 0
+  overflow hidden
+  padding 0 16px
+  position relative
+  text-align center
+  text-transform uppercase
+  transition all .3s cubic-bezier(0,0,.2,1)
+  width $width if $width
+
+  if options.js
+
+    .{$ripple-name}
+      background rgba(0,0,0,.25)
+      border-radius 100%
+      pointer-events none
+      position absolute
+      transform scale(0)
+      z-index 5
+
+    .{$ripple-name}.show
+      animation $ripple-name .45s ease-out
+
+
+    @keyframes $ripple-name
+      to
+        opacity 0
+        transform scale(1.5)

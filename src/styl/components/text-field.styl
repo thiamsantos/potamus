@@ -1,0 +1,79 @@
+text-field(options)
+
+  $primary-text-color = options.primary-text-color || rgba(0,0,0,.87)
+  $secondary-text-color = options.secondary-text-color || rgba(0,0,0,.54)
+  $valid-color = options.valid-color || #4caf50
+  $active-color = options.active-color || #311B92
+  $default-color = options.default-color || #d2d2d2
+  $label-name = options.label-name || __label
+  $input-name = options.input-name || __input
+
+  box-sizing border-box
+  margin 0
+  padding-top 25px
+  position relative
+  width 100%
+
+  &{$label-name}
+    bottom 40px
+    box-sizing inherit
+    color $primary-text-color
+    font-size 13px
+    margin 0
+    padding 0
+    pointer-events none
+    position absolute
+    transition .2s cubic-bezier(.4,0,.2,1) all
+
+    if options.js
+
+      &.is-valid
+        color $valid-color !important
+
+      &.is-closed
+        bottom 10px
+        color $secondary-text-color
+        font-size 15px
+
+  &.is-active &{$label-name}
+    color $active-color
+
+  &{$input-name}
+    border 0
+    border-bottom 1px solid $default-color
+    box-sizing inherit
+    color $primary-text-color
+    display block
+    font-size 15px
+    margin 0
+    outline 0
+    padding 10px 0
+    width 100%
+
+    &:valid
+      border-bottom 1px solid $valid-color
+
+  if options.js
+    &:before
+    &:after
+      background $active-color
+      bottom -1px
+      box-sizing inherit
+      content ''
+      height 2px
+      position absolute
+      transition .2s cubic-bezier(.4,0,.2,1) all
+      width 0
+
+    &:before
+      left 50%
+    &:after
+      right 50%
+
+    &.is-active:before
+    &.is-active:after
+      width 50%
+
+    &.is-valid:before
+    &.is-valid:after
+      background $valid-color

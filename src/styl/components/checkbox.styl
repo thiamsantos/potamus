@@ -1,0 +1,36 @@
+checkbox(options)
+
+  $size = options.size || 25px
+  $border-color = options.border-color || #9e9e9e
+  $color = options.color || #009688
+  $white = #fff
+  $light-grey = #e0e0e0
+
+  appearance none
+  background $white
+  border 4px solid $border-color
+  border-radius 4px
+  box-sizing border-box
+  display inline-block
+  height $size
+  margin 0
+  outline 0
+  padding 0
+  transition background .28s cubic-bezier(.4,0,.2,1)
+  width $size
+
+  &:disabled
+  &.disabled
+    border-color $light-grey
+
+  &:checked
+  &.checked
+    background-color $color
+    background-image url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0uMTQ2LjYwNmwuMDgtLjA4My4yMi4yMi0uMDgzLjA4MnptLjEzNi4xMzdsLjQ5LS40OS4wODIuMDgyLS40OS40OXoiLz4KPC9zdmc+Cg==')
+    background-position center
+    background-repeat no-repeat
+    border 0
+
+    &:disabled
+    &.disabled
+      background-color $light-grey
