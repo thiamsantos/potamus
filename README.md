@@ -74,7 +74,10 @@ Stylus:
 ```
 JavaScript:
 ```javascript
-potamus.button('some-awesome-button-class-name', 'name-for-ripple-effect-class');
+Array.from(document.querySelectorAll('.some-awesome-button-class-name'))
+  .forEach(node => {
+    node.addEventListener('click', button('name-for-ripple-effect-class'))
+  })
 ```
 ### Checkbox
 HTML:
