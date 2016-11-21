@@ -13,7 +13,12 @@
     "lint": "npm run lint:js && npm run lint:styl",
     "lint:js": "xo components/**/*.js test/**/*.js --no-semicolon --esnext --space --global=document --global=window --global=navigator",
     "lint:styl": "stylint ./components/ -c .stylintrc",
-    "build:js": "rollup -c"
+    "test:ui:js": "rollup -c",
+    "test:ui:styl": "stylus -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist",
+    "test:ui:js:watch": "rollup -c -w",
+    "test:ui:styl:watch": "stylus -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist -w",
+    "serve": "browser-sync start -s \"test/ui\" -f \"test/ui/**/*\"",
+    "watch": "run-p -cl serve test:ui:js:watch test:ui:styl:watch"
   },
   "keywords": [
     "stylus",
@@ -29,12 +34,16 @@
   },
   "homepage": "https://github.com/thiamsantos/potamus#readme",
   "devDependencies": {
+    "autoprefixer-stylus": "^0.11.0",
     "babel-core": "^6.18.2",
     "babel-plugin-external-helpers": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
+    "browser-sync": "^2.18.2",
     "husky": "^0.11.9",
+    "npm-run-all": "^3.1.1",
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",
+    "rollup-watch": "^2.5.0",
     "stylint": "^1.5.7",
     "stylus": "^0.54.5",
     "xo": "^0.17.1"

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="dist/main.css">
+  <style>
+    * {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <button class="button">Button</button>
+  <input class="checkbox" type="checkbox">
+  <input class="radio" type="radio" id="first" name="radio">
+  <input class="radio" type="radio" id="second" name="radio">
+
+  <div class="text-field">
+    <input type="text" pattern="[A-Za-z\s]+$" maxlength="37" required class="text-field-input">
+    <label class="text-field-label">Nome</label>
+  </div>
+  <script src="dist/bundle.js"></script>
+</body>
+</html>

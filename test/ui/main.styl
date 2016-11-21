@@ -1,0 +1,39 @@
+@import '../../components/*.styl'
+
+.button
+  button({
+    background: #E91E63,
+    color: #fff,
+    js: true,
+    ripple-name: ripple
+  })
+  margin-bottom 15px
+
+.checkbox
+  checkbox({
+    border-color: #ccc,
+    color: #E91E63
+  })
+  margin-bottom 15px
+
+.radio
+  radio({
+    animation-name: radio-fade,
+    border-color: #ccc,
+    color: #E91E63
+  })
+  display block
+
+
+.text-field
+  text-field({
+    active-color: #E91E63,
+    default-color: #9E9E9E,
+    input-name: -input,
+    js: true,
+    label-name: -label,
+    primary-text-color: rgba(0,0,0,.87),
+    secondary-text-color: rgba(0,0,0,.54),
+    valid-color: #4CAF50
+  })
+

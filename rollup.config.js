@@ -1,7 +1,7 @@
 import babel from 'rollup-plugin-babel'
 
 export default {
-  entry: 'src/js/main.js',
+  entry: 'test/ui/main.js',
   format: 'cjs',
   plugins: [
     babel({
@@ -13,5 +13,5 @@ export default {
       plugins: ['external-helpers']
     })
   ],
-  dest: 'bin/js/main.js'
+  dest: 'test/ui/dist/bundle.js'
 }

@@ -1,13 +1,9 @@
 # potamus
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![Build Status](https://travis-ci.org/thiamsantos/potamus.svg?branch=master)](https://travis-ci.org/thiamsantos/potamus)
 [![devDependencies Status](https://david-dm.org/thiamsantos/potamus/dev-status.svg)](https://david-dm.org/thiamsantos/potamus?type=dev)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-A lightweight and responsive setup of Material Design components writed in stylus. Is not always interesting to use in your project a whole framework like Materialize or Material Design Lite. This project aims to provide independent components, which would not change the way you drive your project.
-
-To use you must install two packages potamus-stylus, that will provide you the stylus mixins, and potamus-js that will provide you the javascript for the components.
-
-```$ npm i -D potamus-js potamus-stylus```
+A lightweight and responsive setup of Material Design components writed in stylus. Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components, which would not change the way you drive your project.
 
 Until now, there the following components:
 - button
@@ -23,7 +19,7 @@ Until now, there the following components:
 
 Is fully recommended the use of [autoprefixer-stylus](https://github.com/jescalan/autoprefixer-stylus) along with potamus-stylus.
 
-#### Import
+<!-- #### Import
 ``` stylus
 @import 'path-to-potamus-stylus/potamus.styl'
 ```
@@ -57,7 +53,7 @@ ES6 Modules:
 ```javascript
 import potamus from 'potamus-js';
 ```
-
+ -->
 ## Components
 
 ### Button
