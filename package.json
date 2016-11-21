@@ -7,11 +7,12 @@
     "url": "git+https://github.com/thiamsantos/potamus.git"
   },
   "scripts": {
+    "test": "",
     "precommit": "npm run lint",
     "prepush": "npm run lint",
     "lint": "npm run lint:js && npm run lint:styl",
-    "lint:js": "xo src/**/*.js --no-semicolon --esnext --space --global=document --global=window --global=navigator",
-    "lint:styl": "stylint ./src/styl/ -c .stylintrc",
+    "lint:js": "xo components/**/*.js test/**/*.js --no-semicolon --esnext --space --global=document --global=window --global=navigator",
+    "lint:styl": "stylint ./components/ -c .stylintrc",
     "build:js": "rollup -c"
   },
   "keywords": [
