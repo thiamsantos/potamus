@@ -1,4 +1,9 @@
 language: node_js
 node_js:
-- stable
-script: bash ./deploy.sh
+  - stable
+script:
+  - npm test
+  - npm run lint
+after_script:
+  - npm install -g coveralls
+  - npm run coveralls

@@ -1,5 +1,6 @@
 # potamus
 [![Build Status](https://travis-ci.org/thiamsantos/potamus.svg?branch=master)](https://travis-ci.org/thiamsantos/potamus)
+[![Coverage Status](https://coveralls.io/repos/github/thiamsantos/potamus/badge.svg?branch=master)](https://coveralls.io/github/thiamsantos/potamus?branch=master)
 [![devDependencies Status](https://david-dm.org/thiamsantos/potamus/dev-status.svg)](https://david-dm.org/thiamsantos/potamus?type=dev)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
