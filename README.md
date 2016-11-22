@@ -6,7 +6,7 @@
 
 A lightweight and responsive setup of Material Design components writed in stylus. Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components, which would not change the way you drive your project.
 
-Until now, there the following components:
+Until now, there are the following components:
 - button
 - checkbox
 - radio

@@ -2,7 +2,7 @@ import babel from 'rollup-plugin-babel'
 
 export default {
   entry: 'test/ui/main.js',
-  format: 'cjs',
+  format: 'iife',
   plugins: [
     babel({
       exclude: 'node_modules/**',
