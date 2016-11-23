@@ -1,0 +1,6 @@
+.editorconfig
+.babelrc
+test/
+rollup.config.js
+.travis.yml
+.stylintrc

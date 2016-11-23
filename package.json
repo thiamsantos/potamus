@@ -2,6 +2,8 @@
   "name": "potamus",
   "version": "0.0.1",
   "description": "A lightweight and responsive setup of Material Design components written in stylus and vanilla js",
+  "main": "index.js",
+  "jsnext:main": "index.esnext.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thiamsantos/potamus.git"
@@ -15,10 +17,10 @@
     "lint": "npm run lint:js && npm run lint:styl",
     "lint:js": "xo components/**/*.js test/**/*.js --no-semicolon --esnext --space --global=document --global=window --global=navigator",
     "lint:styl": "stylint ./components/ -c .stylintrc",
-    "test:ui:js": "rollup -c",
-    "test:ui:styl": "stylus -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist",
-    "test:ui:js:watch": "rollup -c -w",
-    "test:ui:styl:watch": "stylus -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist -w",
+    "build": "rollup -c",
+    "test:ui:styl": "stylus -u ./index.js -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist",
+    "test:ui:js:watch": "rollup -c test/ui/rollup.config.js -w ",
+    "test:ui:styl:watch": "stylus -u ./index.js -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist -w",
     "serve": "browser-sync start -s \"test/ui\" -f \"test/ui/**/*\"",
     "watch": "run-p -cl serve test:ui:js:watch test:ui:styl:watch",
     "test:unit:watch": "tape-watch -r babel-register test/unit/**/*.js -p faucet"
@@ -50,6 +52,8 @@
     "nyc": "^9.0.1",
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-watch": "^2.5.0",
     "stylint": "^1.5.7",
     "stylus": "^0.54.5",

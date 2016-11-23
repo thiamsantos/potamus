@@ -1,10 +1,8 @@
-import button from '../../components/button'
-import checkbox from '../../components/checkbox'
-import textField from '../../components/text-field'
+import potamus from '../../index.esnext'
 
 Array.from(document.querySelectorAll('.button'))
   .forEach(node => {
-    node.addEventListener('click', button('ripple'))
+    node.addEventListener('click', potamus.button('ripple'))
   })
-checkbox('checkbox')
-textField('text-field', '-label', '-input')
+potamus.checkbox('checkbox')
+potamus.textField('text-field', '-label', '-input')
