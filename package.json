@@ -18,11 +18,12 @@
     "lint:js": "xo components/**/*.js test/**/*.js --no-semicolon --esnext --space --global=document --global=window --global=navigator",
     "lint:styl": "stylint ./components/ -c .stylintrc",
     "build": "rollup -c",
+    "build:watch": "rollup -c -w",
     "test:ui:styl": "stylus -u ./index.js -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist",
     "test:ui:js:watch": "rollup -c test/ui/rollup.config.js -w ",
     "test:ui:styl:watch": "stylus -u ./index.js -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist -w",
     "serve": "browser-sync start -s \"test/ui\" -f \"test/ui/**/*\"",
-    "watch": "run-p -cl serve test:ui:js:watch test:ui:styl:watch",
+    "watch": "run-p -cl build:watch serve test:unit:watch test:ui:js:watch test:ui:styl:watch",
     "test:unit:watch": "tape-watch -r babel-register test/unit/**/*.js -p faucet"
   },
   "keywords": [

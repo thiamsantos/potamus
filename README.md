@@ -96,7 +96,7 @@ Stylus:
 ```
 JavaScript:
 ```javascript
-potamus.checkbox('some-awesome-checkbox-class-name');
+potamus.checkbox(navigator.userAgent, 'some-awesome-checkbox-class-name');
 ```
 
 ### Radio
