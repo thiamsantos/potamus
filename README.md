@@ -4,7 +4,7 @@
 [![devDependencies Status](https://david-dm.org/thiamsantos/potamus/dev-status.svg)](https://david-dm.org/thiamsantos/potamus?type=dev)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![npm (scoped)](https://img.shields.io/npm/v/potamus.svg)](https://www.npmjs.com/package/potamus)
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/thiamsantos/potamus/blob/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/l/potamus.svg)](https://github.com/thiamsantos/potamus/blob/master/LICENSE.md)
 
 A lightweight and responsive setup of Material Design components writed in stylus. Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components, which would not change the way you drive your project.
 
@@ -60,18 +60,18 @@ Add potamus as argument of the use option.
 $ stylus --use potamus src -o dist
 ```
 
-## Javascript API
+### Javascript API
 Use some module loader as [rollup](http://rollupjs.org/), [webpack](https://webpack.github.io/), or [browserify](http://browserify.org/) to load potamus components.
 
-### CommonJs:
+#### CommonJs:
 ```javascript
 const potamus = require('potamus')
 ```
-### ES6 Modules:
+#### ES6 Modules:
 ```javascript
 import potamus from 'potamus'
 ```
-### ES6 Modules + Named import:
+#### ES6 Modules + Named import:
 ```javascript
 import {someModule} from 'potamus'
 
@@ -83,11 +83,11 @@ import {button, checkbox} from 'potamus'
 > Note: All components works just fine without javascript, but with some limitations, so is good include the scripts.
 
 ### Button
-HTML:
+#### HTML:
 ``` html
 <button class="some-awesome-button-class-name">Button</button>
 ```
-Stylus:
+#### Stylus:
 ```stylus
 .some-awesome-button-class-name
   button({
@@ -98,7 +98,7 @@ Stylus:
     width: 300px         // width of the button, can be omitted
   })
 ```
-JavaScript:
+#### JavaScript:
 ```javascript
 Array.from(document.querySelectorAll('.some-awesome-button-class-name'))
   .forEach(node => {
@@ -106,11 +106,11 @@ Array.from(document.querySelectorAll('.some-awesome-button-class-name'))
   })
 ```
 ### Checkbox
-HTML:
+#### HTML:
 ```html
 <input class="some-awesome-checkbox-class-name" type="checkbox">
 ```
-Stylus:
+#### Stylus:
 ```stylus
 .some-awesome-checkbox-class-name
   checkbox({
@@ -119,18 +119,18 @@ Stylus:
     size: 40px          // size of the checkbox
   })
 ```
-JavaScript:
+#### JavaScript:
 ```javascript
 potamus.checkbox(navigator.userAgent, 'some-awesome-checkbox-class-name')
 ```
 
 ### Radio
-HTML:
+#### HTML:
 ```html
 <input class="some-awesome-radio-name" type="radio" id="first" name="radio">
 <input class="some-awesome-radio-name" type="radio" id="second" name="radio">
 ```
-Stylus:
+#### Stylus:
 ```stylus
 .some-awesome-radio-name
   radio({
@@ -140,18 +140,19 @@ Stylus:
     size: 30px                  // size of the checkbox
   })
 ```
-JavaScript:
+#### JavaScript:
 
 This component doesn't need javascript.
+
 ### Text-field
-HTML:
+#### HTML:
 ```html
 <div class="some-awesome-text-field-name">
   <input class="some-awesome-text-field-name_sufix-input" type="text">
   <label class="some-awesome-text-field-name__sufix-label">Nome</label>
 </div>
 ```
-Stylus:
+#### Stylus:
 ```stylus
 .some-awesome-text-field-name
   text-field({
@@ -166,7 +167,7 @@ Stylus:
     valid-color: #4CAF50                   // color when the input is valid
   })
 ```
-JavaScript:
+#### JavaScript:
 ```javascript
 potamus.textField('some-awesome-text-field-name', '__sufix-label', '_sufix-input')
 ```
