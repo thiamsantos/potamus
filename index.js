@@ -1,23 +1,49 @@
 'use strict';
 
-function createRipple(rect, rippleClass) {
+/**
+ * Create a ripple.
+ * @param {object} rect - the size of an element and its position relative to
+ * the viewport.
+ * @param {string} rippleClass - class name of the ripple ot be created.
+ * @return {number} a DOM node.
+ */
+var createRipple = function createRipple(rect, rippleClass) {
   var ripple = document.createElement('span');
   ripple.classList.add(rippleClass);
   ripple.style.height = ripple.style.width = Math.max(rect.width, rect.height) + 'px';
 
   return ripple;
-}
+};
 
-function positionateRipple(ripple, top, left) {
+/**
+ * Positionate a ripple.
+ * @param {object} ripple - DOM node.
+ * @param {string|number} top - top position of the node.
+ * @param {string|number} left - left position of the node.
+ * @example
+ * const node = document.getElementById('id')
+ * positionateRipple(node, 100, 200)
+ */
+var positionateRipple = function positionateRipple(ripple, top, left) {
   ripple.style.top = top + 'px';
   ripple.style.left = left + 'px';
   ripple.classList.add('show');
-}
+};
 
+/**
+ * Get half of a number.
+ * @param {number} n - a number.
+ * @return {number} half of the n.
+ */
 var getHalf = function getHalf(n) {
   return n / 2;
 };
 
+/**
+ * Main function of button component that adds the ripple effect.
+ * @param {string} rippleClass - class name of the ripple.
+ * @param {object} e - DOM event.
+ */
 var button = (function (rippleClass) {
   return function (e) {
     var button = e.target;
@@ -216,6 +242,14 @@ var focusingInput = function focusingInput(e) {
   target.parentNode.classList.remove('is-closed');
 };
 
+/**
+ * On input function for text-field.
+ * If input is valid add class is-valid to the parent node.
+ * @param {object} e - DOM event.
+ * @example
+ * const node = document.getElementById('id')
+ * node.addEventListener('input', typingInput)
+ */
 var typingInput = function typingInput(e) {
   var target = e.target;
   var toggleValidClass = validate(target);
@@ -223,6 +257,14 @@ var typingInput = function typingInput(e) {
   toggleValidClass(target.parentNode, 'is-valid');
 };
 
+/**
+ * Main function.
+ * Add class is-closed do the parent node and attach the events.
+ * @param {object} node - DOM node.
+ * @example
+ * const node = document.getElementById('id')
+ * textField(node)
+ */
 var textField = (function (node) {
   node.parentNode.classList.add('is-closed');
 

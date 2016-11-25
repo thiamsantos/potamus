@@ -7,4 +7,5 @@ Array.from(document.querySelectorAll('.button'))
 
 Array.from(document.querySelectorAll('.text-field-input'))
   .forEach(potamus.textField)
+
 potamus.checkbox(navigator.userAgent, 'checkbox')
