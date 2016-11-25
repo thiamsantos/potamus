@@ -1,6 +1,6 @@
 {
   "name": "potamus",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A lightweight and responsive setup of Material Design components written in stylus and vanilla js",
   "main": "index.js",
   "jsnext:main": "index.esnext.js",
