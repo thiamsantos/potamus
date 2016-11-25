@@ -7,31 +7,43 @@
 
 A lightweight and responsive setup of Material Design components writed in stylus. Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components, which would not change the way you drive your project.
 
-Until now, there are the following components:
-- button
-- checkbox
-- radio
-- text-field
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Stylus plugin](#stylus-plugin)
+  - [Javascript API](#javascript-api)
+- [Components](#components)
+  - [Button](#button)
+  - [Checkbox](#checkbox)
+  - [Radio](#radio)
+  - [Text Field](#text-field)
+- [Contribute](#contribute)
+- [License](#license)
+
+## Installation
+```sh
+$ npm install --save-dev potamus
+```
 
 ## Usage
+Potamus consists of a two-part package, a stylus plugin and a javascript API.
 
-*Note: All components works just fine without javascript, but with some limitations, so is good include the scripts.*
+### Stylus Plugin
+> Is fully recommended the use of [autoprefixer-stylus](https://github.com/jescalan/autoprefixer-stylus) along with potamus.
 
-### Stylus
-
-Is fully recommended the use of [autoprefixer-stylus](https://github.com/jescalan/autoprefixer-stylus) along with potamus-stylus.
-
-<!-- #### Import
+#### Import
+Just import the stylus file to you project.
 ``` stylus
-@import 'path-to-potamus-stylus/potamus.styl'
+@import 'path/to/potamus/components/some-component.styl'
 ```
 #### Gulp
 To use with gulp just first install the npm package and then add to use add to your gulpfile as a plugin of stylus.
 ``` javascript
-const gulp    = require('gulp')
-    , stylus  = require('gulp-stylus')
-    , plumber = require('gulp-plumber')
-    , potamus = require('potamus-stylus');
+const gulp = require('gulp')
+const plumber = require('gulp-plumber')
+const potamus = require('potamus')
+const stylus = require('gulp-stylus')
 
 gulp.task('stylus', () =>
   gulp.src('src/*.styl')
@@ -39,24 +51,35 @@ gulp.task('stylus', () =>
     .pipe(stylus({
       use: [potamus()]
     }))
-    .pipe(gulp.dest('dist/')));
+    .pipe(gulp.dest('dist/')))
 ```
 #### Stylus cli
-`$ stylus --use potamus-stylus src -o dist`
-
-## JavaScript
-Use some module loader as [webpack](https://webpack.github.io/) or [rollup](http://rollupjs.org/) to load potamus components.
-
-CommonJs:
-```javascript
-const potamus = require('potamus-js');
+Add potamus as argument of the use option.
+```sh
+$ stylus --use potamus src -o dist
 ```
-ES6 Modules:
+
+## Javascript API
+Use some module loader as [rollup](http://rollupjs.org/), [webpack](https://webpack.github.io/), or [browserify](http://browserify.org/) to load potamus components.
+
+### CommonJs:
 ```javascript
-import potamus from 'potamus-js';
+const potamus = require('potamus')
 ```
- -->
+### ES6 Modules:
+```javascript
+import potamus from 'potamus'
+```
+### ES6 Modules + Named import:
+```javascript
+import {someModule} from 'potamus'
+
+// Example:
+import {button, checkbox} from 'potamus'
+```
+
 ## Components
+> Note: All components works just fine without javascript, but with some limitations, so is good include the scripts.
 
 ### Button
 HTML:
@@ -97,7 +120,7 @@ Stylus:
 ```
 JavaScript:
 ```javascript
-potamus.checkbox(navigator.userAgent, 'some-awesome-checkbox-class-name');
+potamus.checkbox(navigator.userAgent, 'some-awesome-checkbox-class-name')
 ```
 
 ### Radio
@@ -144,16 +167,16 @@ Stylus:
 ```
 JavaScript:
 ```javascript
-potamus.textField('some-awesome-text-field-name', '__sufix-label', '_sufix-input');
+potamus.textField('some-awesome-text-field-name', '__sufix-label', '_sufix-input')
 ```
 
-## Contributing
+## Contribute
 - Fork it!
 - Create a new branch for the new feature: `git checkout -b my-new-feature`
-- Commit your changes: `git commit -m 'Add some feature'`
+- Commit your changes: `git commit -am 'Add some feature'`
 - Push to the branch: `git push origin my-new-feature`
 - Submit a pull request with full remarks documenting your changes ;)
 
 ## License
 
-potamus is released under the terms of the [MIT License](https://opensource.org/licenses/MIT)
+[MIT License](https://opensource.org/licenses/MIT) &copy; [Thiago Santos](https://github.com/thiamsantos)

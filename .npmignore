@@ -1,6 +1,6 @@
-.editorconfig
-.babelrc
 test/
-rollup.config.js
+.babelrc
+.editorconfig
 .travis.yml
 .stylintrc
+rollup.config.js
