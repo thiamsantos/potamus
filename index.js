@@ -163,52 +163,74 @@ var checkbox = function checkbox(userAgent, checkboxClass) {
   }
 };
 
-function textField(textFieldClass, labelSufix, inputSufix) {
-  function validate(condition, classElement, className) {
-    if (condition && !classElement.contains(className)) {
-      classElement.add(className);
-    } else if (!condition && classElement.contains(className)) {
-      classElement.remove(className);
-    }
-  }
+/**
+ * Given a class, add this class to nodeToChange if nodeToValidate is valid,
+ * otherwise remove a this class from nodeTo Validate.
+ * @param {object} nodeToValidate - DOM node.
+ * @param {object} nodeToChange - DOM node.
+ * @param {string} validClassName - class name of valid nodes.
+ */
+var validate = function validate(nodeToValidate) {
+  return function (nodeToChange, validClassName) {
+    var isValid = nodeToValidate.checkValidity();
 
-  function leavingInput() {
-    if (this.value) {
-      this.classList.add('used');
+    if (isValid) {
+      nodeToChange.classList.add(validClassName);
     } else {
-      this.classList.remove('used');
+      nodeToChange.classList.remove(validClassName);
+    }
+  };
+};
+
+var leavingInput = function leavingInput(textFieldClass, labelSufix) {
+  return function (e) {
+    var target = e.target;
+    if (target.value) {
+      target.classList.add('used');
+    } else {
+      target.classList.remove('used');
     }
 
-    this.parentNode.classList.remove('is-active');
-    if (!this.value) {
-      this.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.add('is-closed');
+    target.parentNode.classList.remove('is-active');
+    if (!target.value) {
+      target.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.add('is-closed');
     }
-  }
+  };
+};
 
-  function focusingInput() {
-    this.parentNode.classList.add('is-active');
-    this.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.remove('is-closed');
-  }
+var focusingInput = function focusingInput(textFieldClass, labelSufix) {
+  return function (e) {
+    var target = e.target;
+    target.parentNode.classList.add('is-active');
+    target.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.remove('is-closed');
+  };
+};
 
-  function typingInput() {
-    var groupClass = this.parentNode.classList;
-    var labelClass = this.parentNode.querySelector('.' + textFieldClass + labelSufix).classList;
-    var valid = this.checkValidity();
+var typingInput = function typingInput(textFieldClass, labelSufix) {
+  return function (e) {
+    var target = e.target;
+    var group = target.parentNode;
+    var label = target.parentNode.querySelector('.' + textFieldClass + labelSufix);
     var validClass = 'is-valid';
+    var toggleValidClass = validate(target);
 
-    validate(valid, groupClass, validClass);
-    validate(valid, labelClass, validClass);
-  }
+    toggleValidClass(group, validClass);
+    toggleValidClass(label, validClass);
+  };
+};
 
-  function eventHandler(input) {
-    input.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.add('is-closed');
+var eventHandler = function eventHandler(textFieldClass, labelSufix) {
+  return function (node) {
+    node.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.add('is-closed');
 
-    input.addEventListener('blur', leavingInput, true);
-    input.addEventListener('focus', focusingInput);
-    input.addEventListener('input', typingInput);
-  }
+    node.addEventListener('blur', leavingInput(textFieldClass, labelSufix), true);
+    node.addEventListener('focus', focusingInput(textFieldClass, labelSufix));
+    node.addEventListener('input', typingInput(textFieldClass, labelSufix));
+  };
+};
 
-  [].slice.call(document.querySelectorAll('.' + textFieldClass + inputSufix)).forEach(eventHandler);
+function textField(textFieldClass, labelSufix, inputSufix) {
+  [].slice.call(document.querySelectorAll('.' + textFieldClass + inputSufix)).forEach(eventHandler(textFieldClass, labelSufix));
 }
 
 var potamus = function potamus(opts) {

@@ -1,12 +1,14 @@
 # potamus
 [![Build Status](https://travis-ci.org/thiamsantos/potamus.svg?branch=master)](https://travis-ci.org/thiamsantos/potamus)
-[![Coverage Status](https://coveralls.io/repos/github/thiamsantos/potamus/badge.svg?branch=master)](https://coveralls.io/github/thiamsantos/potamus?branch=master)
-[![devDependencies Status](https://david-dm.org/thiamsantos/potamus/dev-status.svg)](https://david-dm.org/thiamsantos/potamus?type=dev)
+[![Coveralls](https://img.shields.io/coveralls/thiamsantos/potamus.svg)](https://coveralls.io/github/thiamsantos/potamus?branch=master)
+[![David](https://img.shields.io/david/dev/thiamsantos/potamus.svg)](https://david-dm.org/thiamsantos/potamus?type=dev)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![npm (scoped)](https://img.shields.io/npm/v/potamus.svg)](https://www.npmjs.com/package/potamus)
 [![npm](https://img.shields.io/npm/l/potamus.svg)](https://github.com/thiamsantos/potamus/blob/master/LICENSE.md)
 
-A lightweight and responsive setup of Material Design components writed in stylus. Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components, which would not change the way you drive your project.
+> A lightweight and responsive setup of Material Design components writed in stylus.
+
+Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components, which would not change the way you drive your project.
 
 ## Table of Contents
 

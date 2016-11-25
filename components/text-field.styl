@@ -30,10 +30,11 @@ text-field(options)
       &.is-valid
         color $valid-color !important
 
-      &.is-closed
-        bottom 10px
-        color $secondary-text-color
-        font-size 15px
+  if options.js
+    &.is-closed &{$label-name}
+      bottom 10px
+      color $secondary-text-color
+      font-size 15px
 
   &.is-active &{$label-name}
     color $active-color

@@ -30,8 +30,7 @@
     "stylus",
     "material",
     "design",
-    "components",
-    "setup"
+    "components"
   ],
   "author": "Thiago Santos",
   "license": "MIT",
