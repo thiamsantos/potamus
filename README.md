@@ -102,6 +102,8 @@ import {button, checkbox} from 'potamus'
 ```
 #### JavaScript:
 ```javascript
+import potamus from 'potamus'
+
 Array.from(document.querySelectorAll('.some-awesome-button-class-name'))
   .forEach(node => {
     node.addEventListener('click', button('name-for-ripple-effect-class'))
@@ -123,6 +125,8 @@ Array.from(document.querySelectorAll('.some-awesome-button-class-name'))
 ```
 #### JavaScript:
 ```javascript
+import potamus from 'potamus'
+
 potamus.checkbox(navigator.userAgent, 'some-awesome-checkbox-class-name')
 ```
 
@@ -171,7 +175,11 @@ This component doesn't need javascript.
 ```
 #### JavaScript:
 ```javascript
-potamus.textField('some-awesome-text-field-name', '__sufix-label', '_sufix-input')
+import potamus from 'potamus'
+
+Array
+  .from(document.querySelectorAll('.some-awesome-text-field-name_sufix-input'))
+  .forEach(potamus.textField)
 ```
 
 ## Contribute

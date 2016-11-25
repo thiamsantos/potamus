@@ -40,6 +40,7 @@ var button = (function (rippleClass) {
 });
 
 /**
+ * Check if browser is firefox.
  * @param {string} userAgent - userAgent of the browser.
  * @return {boolean} if userAgent contains Firefox return true.
  * @example
@@ -164,6 +165,7 @@ var checkbox = function checkbox(userAgent, checkboxClass) {
 };
 
 /**
+ * Check validity of a text-field.
  * Given a class, add this class to nodeToChange if nodeToValidate is valid,
  * otherwise remove a this class from nodeTo Validate.
  * @param {object} nodeToValidate - DOM node.
@@ -182,56 +184,52 @@ var validate = function validate(nodeToValidate) {
   };
 };
 
-var leavingInput = function leavingInput(textFieldClass, labelSufix) {
-  return function (e) {
-    var target = e.target;
-    if (target.value) {
-      target.classList.add('used');
-    } else {
-      target.classList.remove('used');
-    }
+/**
+ * On blur function for text-field.
+ * Remove class is-active of parent node and if value is not empty add class
+ * is-closed
+ * @param {object} e - DOM event.
+ * @example
+ * const node = document.getElementById('id')
+ * node.addEventListener('blur', leavingInput, true)
+ */
+var leavingInput = function leavingInput(e) {
+  var target = e.target;
+  target.parentNode.classList.remove('is-active');
 
-    target.parentNode.classList.remove('is-active');
-    if (!target.value) {
-      target.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.add('is-closed');
-    }
-  };
+  if (!target.value) {
+    target.parentNode.classList.add('is-closed');
+  }
 };
 
-var focusingInput = function focusingInput(textFieldClass, labelSufix) {
-  return function (e) {
-    var target = e.target;
-    target.parentNode.classList.add('is-active');
-    target.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.remove('is-closed');
-  };
+/**
+ * On click function for text-field.
+ * Remove class is-closed and add is-active.
+ * @param {object} e - DOM event.
+ * @example
+ * const node = document.getElementById('id')
+ * node.addEventListener('click', focusingInput)
+ */
+var focusingInput = function focusingInput(e) {
+  var target = e.target;
+  target.parentNode.classList.add('is-active');
+  target.parentNode.classList.remove('is-closed');
 };
 
-var typingInput = function typingInput(textFieldClass, labelSufix) {
-  return function (e) {
-    var target = e.target;
-    var group = target.parentNode;
-    var label = target.parentNode.querySelector('.' + textFieldClass + labelSufix);
-    var validClass = 'is-valid';
-    var toggleValidClass = validate(target);
+var typingInput = function typingInput(e) {
+  var target = e.target;
+  var toggleValidClass = validate(target);
 
-    toggleValidClass(group, validClass);
-    toggleValidClass(label, validClass);
-  };
+  toggleValidClass(target.parentNode, 'is-valid');
 };
 
-var eventHandler = function eventHandler(textFieldClass, labelSufix) {
-  return function (node) {
-    node.parentNode.querySelector('.' + textFieldClass + labelSufix).classList.add('is-closed');
+var textField = (function (node) {
+  node.parentNode.classList.add('is-closed');
 
-    node.addEventListener('blur', leavingInput(textFieldClass, labelSufix), true);
-    node.addEventListener('focus', focusingInput(textFieldClass, labelSufix));
-    node.addEventListener('input', typingInput(textFieldClass, labelSufix));
-  };
-};
-
-function textField(textFieldClass, labelSufix, inputSufix) {
-  [].slice.call(document.querySelectorAll('.' + textFieldClass + inputSufix)).forEach(eventHandler(textFieldClass, labelSufix));
-}
+  node.addEventListener('blur', leavingInput, true);
+  node.addEventListener('focus', focusingInput);
+  node.addEventListener('input', typingInput);
+});
 
 var potamus = function potamus(opts) {
   return function (style) {

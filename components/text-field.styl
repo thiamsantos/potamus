@@ -25,20 +25,6 @@ text-field(options)
     position absolute
     transition .2s cubic-bezier(.4,0,.2,1) all
 
-    if options.js
-
-      &.is-valid
-        color $valid-color !important
-
-  if options.js
-    &.is-closed &{$label-name}
-      bottom 10px
-      color $secondary-text-color
-      font-size 15px
-
-  &.is-active &{$label-name}
-    color $active-color
-
   &{$input-name}
     border 0
     border-bottom 1px solid $default-color
@@ -55,6 +41,17 @@ text-field(options)
       border-bottom 1px solid $valid-color
 
   if options.js
+    &.is-closed &{$label-name}
+      bottom 10px
+      color $secondary-text-color
+      font-size 15px
+
+    &.is-active &{$label-name}
+      color $active-color
+
+    &.is-valid &{$label-name}
+      color $valid-color
+
     &:before
     &:after
       background $active-color

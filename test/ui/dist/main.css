@@ -162,17 +162,6 @@
   -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
 }
-.text-field-label.is-valid {
-  color: #4caf50 !important;
-}
-.text-field-label.is-closed {
-  bottom: 10px;
-  color: rgba(0,0,0,0.54);
-  font-size: 15px;
-}
-.text-field.is-active .text-field-label {
-  color: #e91e63;
-}
 .text-field-input {
   border: 0;
   border-bottom: 1px solid #9e9e9e;
@@ -187,6 +176,17 @@
 }
 .text-field-input:valid {
   border-bottom: 1px solid #4caf50;
+}
+.text-field.is-closed .text-field-label {
+  bottom: 10px;
+  color: rgba(0,0,0,0.54);
+  font-size: 15px;
+}
+.text-field.is-active .text-field-label {
+  color: #e91e63;
+}
+.text-field.is-valid .text-field-label {
+  color: #4caf50;
 }
 .text-field:before,
 .text-field:after {

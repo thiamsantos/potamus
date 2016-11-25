@@ -1,4 +1,5 @@
 /**
+ * Check validity of a text-field.
  * Given a class, add this class to nodeToChange if nodeToValidate is valid,
  * otherwise remove a this class from nodeTo Validate.
  * @param {object} nodeToValidate - DOM node.
@@ -15,50 +16,65 @@ export const validate = nodeToValidate => (nodeToChange, validClassName) => {
   }
 }
 
-export const leavingInput = (textFieldClass, labelSufix) => e => {
+/**
+ * On blur function for text-field.
+ * Remove class is-active of parent node and if value is not empty add class
+ * is-closed
+ * @param {object} e - DOM event.
+ * @example
+ * const node = document.getElementById('id')
+ * node.addEventListener('blur', leavingInput, true)
+ */
+export const leavingInput = e => {
   const target = e.target
-  if (target.value) {
-    target.classList.add('used')
-  } else {
-    target.classList.remove('used')
-  }
-
   target.parentNode.classList.remove('is-active')
+
   if (!target.value) {
-    target.parentNode.querySelector(`.${textFieldClass}${labelSufix}`)
-      .classList.add('is-closed')
+    target.parentNode.classList.add('is-closed')
   }
 }
 
-export const focusingInput = (textFieldClass, labelSufix) => e => {
+/**
+ * On click function for text-field.
+ * Remove class is-closed and add is-active.
+ * @param {object} e - DOM event.
+ * @example
+ * const node = document.getElementById('id')
+ * node.addEventListener('click', focusingInput)
+ */
+export const focusingInput = e => {
   const target = e.target
   target.parentNode.classList.add('is-active')
-  target.parentNode.querySelector(`.${textFieldClass}${labelSufix}`)
-    .classList.remove('is-closed')
+  target.parentNode.classList.remove('is-closed')
 }
 
-export const typingInput = (textFieldClass, labelSufix) => e => {
+/**
+ * On input function for text-field.
+ * If input is valid add class is-valid to the parent node.
+ * @param {object} e - DOM event.
+ * @example
+ * const node = document.getElementById('id')
+ * node.addEventListener('input', typingInput)
+ */
+export const typingInput = e => {
   const target = e.target
-  const group = target.parentNode
-  const label = target.parentNode
-          .querySelector(`.${textFieldClass}${labelSufix}`)
-  const validClass = 'is-valid'
   const toggleValidClass = validate(target)
 
-  toggleValidClass(group, validClass)
-  toggleValidClass(label, validClass)
+  toggleValidClass(target.parentNode, 'is-valid')
 }
 
-const eventHandler = (textFieldClass, labelSufix) => node => {
+/**
+ * Main function.
+ * Add class is-closed do the parent node and attach the events.
+ * @param {object} node - DOM node.
+ * @example
+ * const node = document.getElementById('id')
+ * textField(node)
+ */
+export default node => {
   node.parentNode.classList.add('is-closed')
 
-  node.addEventListener('blur', leavingInput(textFieldClass, labelSufix), true)
-  node.addEventListener('focus', focusingInput(textFieldClass, labelSufix))
-  node.addEventListener('input', typingInput(textFieldClass, labelSufix))
-}
-
-export default function textField(textFieldClass, labelSufix, inputSufix) {
-  [].slice
-    .call(document.querySelectorAll(`.${textFieldClass}${inputSufix}`))
-    .forEach(eventHandler(textFieldClass, labelSufix))
+  node.addEventListener('blur', leavingInput, true)
+  node.addEventListener('focus', focusingInput)
+  node.addEventListener('input', typingInput)
 }

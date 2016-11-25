@@ -1,4 +1,5 @@
 /**
+ * Check if browser is firefox.
  * @param {string} userAgent - userAgent of the browser.
  * @return {boolean} if userAgent contains Firefox return true.
  * @example
