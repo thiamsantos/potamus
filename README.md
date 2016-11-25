@@ -179,4 +179,4 @@ potamus.textField('some-awesome-text-field-name', '__sufix-label', '_sufix-input
 
 ## License
 
-[MIT License](https://opensource.org/licenses/MIT) &copy; [Thiago Santos](https://github.com/thiamsantos)
+[MIT License](https://github.com/thiamsantos/potamus/blob/master/LICENSE.md) &copy; [Thiago Santos](https://github.com/thiamsantos)
