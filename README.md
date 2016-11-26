@@ -93,7 +93,7 @@ import {button, checkbox} from 'potamus'
 ```stylus
 .some-awesome-button-class-name
   button({
-    background: #E91E63, // background-color of the button
+    background-color: #E91E63, // background-color of the button
     color: #fff,         // text-color of the button
     ripple-name: effect, // class name for the ripple effect
     js: true             // if true classes needed for js interactions are added
@@ -119,7 +119,7 @@ Array.from(document.querySelectorAll('.some-awesome-button-class-name'))
 .some-awesome-checkbox-class-name
   checkbox({
     border-color: #ccc, // border color when the checkbox is unchecked
-    color: #E91E63,     // color when the checkbox is checked
+    background-color: #E91E63, // color when the checkbox is checked
     size: 40px          // size of the checkbox
   })
 ```
@@ -142,7 +142,7 @@ potamus.checkbox(navigator.userAgent, 'some-awesome-checkbox-class-name')
   radio({
     animation-name: radio-fade, // name of the animation of the radio
     border-color: #9E9E9E,      // border color when the radio is unchecked
-    color: #F44336,             // color when the radio is checked
+    background-color: #F44336,  // color when the radio is checked
     size: 30px                  // size of the checkbox
   })
 ```

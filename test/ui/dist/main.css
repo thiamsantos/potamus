@@ -1,8 +1,8 @@
 .button {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   background-color: #e91e63;
   border-radius: 2px;
   border-width: 0;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -17,9 +17,10 @@
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
-  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
   margin-bottom: 15px;
+}
+.button:focus {
+  box-shadow: 0 0 8px rgba(0,0,0,0.18), 0 8px 16px rgba(0,0,0,0.36);
 }
 .button .ripple {
   background: rgba(0,0,0,0.25);
@@ -28,11 +29,12 @@
   position: absolute;
   -webkit-transform: scale(0);
           transform: scale(0);
+  will-change: opacity, transform;
   z-index: 5;
 }
-.button .ripple.show {
-  -webkit-animation: ripple 0.45s ease-out;
-          animation: ripple 0.45s ease-out;
+.button .ripple.is-active {
+  -webkit-animation: ripple 0.45s cubic-bezier(0, 0, 0.2, 1);
+          animation: ripple 0.45s cubic-bezier(0, 0, 0.2, 1);
 }
 @-webkit-keyframes ripple {
   to {
@@ -61,17 +63,18 @@
   margin: 0;
   outline: 0;
   padding: 0;
+  position: relative;
   -webkit-transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   width: 25px;
   margin-bottom: 15px;
 }
 .checkbox:disabled,
-.checkbox.disabled {
+.checkbox.is-disabled {
   border-color: #e0e0e0;
 }
 .checkbox:checked,
-.checkbox.checked {
+.checkbox.is-checked {
   background-color: #e91e63;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0uMTQ2LjYwNmwuMDgtLjA4My4yMi4yMi0uMDgzLjA4MnptLjEzNi4xMzdsLjQ5LS40OS4wODIuMDgyLS40OS40OXoiLz4KPC9zdmc+Cg==");
   background-position: center;
@@ -79,9 +82,9 @@
   border: 0;
 }
 .checkbox:checked:disabled,
-.checkbox.checked:disabled,
-.checkbox:checked.disabled,
-.checkbox.checked.disabled {
+.checkbox.is-checked:disabled,
+.checkbox:checked.is-disabled,
+.checkbox.is-checked.is-disabled {
   background-color: #e0e0e0;
 }
 .radio {
@@ -96,10 +99,6 @@
   outline: 0;
   padding: 0;
   position: relative;
-  -webkit-transition: background, -webkit-transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background, -webkit-transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   width: 25px;
   display: block;
 }
@@ -107,21 +106,26 @@
   opacity: 0.38;
   pointer-events: none;
 }
-.radio:checked {
-  border-color: #e91e63;
-}
-.radio:checked:before {
-  -webkit-animation: radio-fade 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-          animation: radio-fade 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+.radio:before {
   background: #e91e63;
   border-radius: 50%;
   content: '';
   display: block;
   height: 60%;
   left: 20%;
+  opacity: 0;
   position: absolute;
   top: 20%;
   width: 60%;
+  will-change: transform, opacity;
+}
+.radio:checked {
+  border-color: #e91e63;
+}
+.radio:checked:before {
+  -webkit-animation: radio-fade 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+          animation: radio-fade 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
 }
 @-webkit-keyframes radio-fade {
   from {
@@ -159,8 +163,11 @@
   padding: 0;
   pointer-events: none;
   position: absolute;
-  -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
-  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
+  -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) -webkit-transform;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) -webkit-transform;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) transform;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) transform, 0.2s cubic-bezier(0.4, 0, 0.2, 1) -webkit-transform;
+  will-change: transform;
 }
 .text-field-input {
   border: 0;
@@ -178,9 +185,9 @@
   border-bottom: 1px solid #4caf50;
 }
 .text-field.is-closed .text-field-label {
-  bottom: 10px;
   color: rgba(0,0,0,0.54);
-  font-size: 15px;
+  -webkit-transform: scale(1.2) translateX(10%) translateY(180%);
+          transform: scale(1.2) translateX(10%) translateY(180%);
 }
 .text-field.is-active .text-field-label {
   color: #e91e63;
@@ -196,8 +203,8 @@
   content: '';
   height: 2px;
   position: absolute;
-  -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
-  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) all;
+  -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) width;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) width;
   width: 0;
 }
 .text-field:before {

@@ -23,7 +23,8 @@ text-field(options)
     padding 0
     pointer-events none
     position absolute
-    transition .2s cubic-bezier(.4,0,.2,1) all
+    transition .2s cubic-bezier(.4,0,.2,1) transform
+    will-change transform
 
   &{$input-name}
     border 0
@@ -42,9 +43,8 @@ text-field(options)
 
   if options.js
     &.is-closed &{$label-name}
-      bottom 10px
       color $secondary-text-color
-      font-size 15px
+      transform scale(1.2) translateX(10%) translateY(180%)
 
     &.is-active &{$label-name}
       color $active-color
@@ -60,7 +60,7 @@ text-field(options)
       content ''
       height 2px
       position absolute
-      transition .2s cubic-bezier(.4,0,.2,1) all
+      transition .2s cubic-bezier(.4,0,.2,1) width
       width 0
 
     &:before

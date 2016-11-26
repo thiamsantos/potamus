@@ -2,7 +2,7 @@ radio(options)
 
   $size = options.size || 25px
   $border-color = options.border-color || #9e9e9e
-  $color = options.color || #009688
+  $background-color = options.background-color || #009688
   $animation-name = options.animation-name || show-up
 
   $light-grey = #e0e0e0
@@ -16,27 +16,31 @@ radio(options)
   outline 0
   padding 0
   position relative
-  transition background,transform .28s cubic-bezier(.4,0,.2,1)
   width $size
 
   &:disabled
     opacity .38
     pointer-events none
 
+  &:before
+    background $background-color
+    border-radius 50%
+    content ''
+    display block
+    height 60%
+    left 20%
+    opacity 0
+    position absolute
+    top 20%
+    width 60%
+    will-change transform, opacity
+
   &:checked
-    border-color $color
+    border-color $background-color
 
     &:before
       animation $animation-name .28s cubic-bezier(.4,0,.2,1)
-      background $color
-      border-radius 50%
-      content ''
-      display block
-      height 60%
-      left 20%
-      position absolute
-      top 20%
-      width 60%
+      opacity 1
 
   @keyframes $animation-name
     from

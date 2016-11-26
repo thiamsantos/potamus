@@ -1,6 +1,14 @@
 button(options)
 
-  $background = options.background || #f44336
+  focus-shadow()
+    box-shadow 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36)
+
+  default-shadow()
+    box-shadow 0 2px 2px 0 rgba(0,0,0,$shadow-key-penumbra-opacity),
+      0 3px 1px -2px rgba(0,0,0,$shadow-key-umbra-opacity),
+      0 1px 5px 0 rgba(0,0,0,$shadow-ambient-shadow-opacity)
+
+  $background-color = options.background-color || #f44336
   $color = options.color || #fff
 
   $width = options.width
@@ -11,12 +19,10 @@ button(options)
   $shadow-key-penumbra-opacity = .14
   $shadow-ambient-shadow-opacity = .12
 
-  background-color $background
+  default-shadow()
+  background-color $background-color
   border-radius 2px
   border-width 0
-  box-shadow 0 2px 2px 0 rgba(0,0,0,$shadow-key-penumbra-opacity),
-    0 3px 1px -2px rgba(0,0,0,$shadow-key-umbra-opacity),
-    0 1px 5px 0 rgba(0,0,0,$shadow-ambient-shadow-opacity)
   box-sizing border-box
   color $color
   cursor pointer
@@ -31,8 +37,10 @@ button(options)
   position relative
   text-align center
   text-transform uppercase
-  transition all .3s cubic-bezier(0,0,.2,1)
   width $width if $width
+
+  &:focus
+    focus-shadow()
 
   if options.js
 
@@ -42,10 +50,11 @@ button(options)
       pointer-events none
       position absolute
       transform scale(0)
+      will-change opacity, transform
       z-index 5
 
-    .{$ripple-name}.show
-      animation $ripple-name .45s ease-out
+    .{$ripple-name}.is-active
+      animation $ripple-name .45s cubic-bezier(0,0,.2,1)
 
     @keyframes $ripple-name
       to

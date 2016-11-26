@@ -27,7 +27,7 @@ export const createRipple = (rect, rippleClass) => {
 export const positionateRipple = (ripple, top, left) => {
   ripple.style.top = `${top}px`
   ripple.style.left = `${left}px`
-  ripple.classList.add('show')
+  ripple.classList.add('is-active')
 }
 
 /**
@@ -52,7 +52,7 @@ export default rippleClass => e => {
     button.appendChild(ripple)
   }
 
-  ripple.classList.remove('show')
+  ripple.classList.remove('is-active')
   const left =
     e.pageX -
     buttonRect.left -

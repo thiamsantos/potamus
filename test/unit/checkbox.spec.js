@@ -39,7 +39,7 @@ test('toggle DOM attribute', t => {
 
 test('is node disabled', t => {
   const node = document.createElement('span')
-  node.classList.add('disabled')
+  node.classList.add('is-disabled')
 
   const expected = isDisabled(node)
 
@@ -97,7 +97,7 @@ test('checkbox behaviour', t => {
   })
 
   t.ok(
-    span.classList.contains('checked'),
+    span.classList.contains('is-checked'),
     'should add the class checked')
   t.ok(
     div.hasAttribute('checked'),
@@ -108,20 +108,20 @@ test('checkbox behaviour', t => {
   })
 
   t.notOk(
-    span.classList.contains('checked'),
+    span.classList.contains('is-checked'),
     'should remove the class checked')
   t.notOk(
     div.hasAttribute('checked'),
     'should remove the attribute checked')
 
-  span.classList.add('disabled')
+  span.classList.add('is-disabled')
 
   checkboxBehaviour({
     target: span
   })
 
   t.notOk(
-    span.classList.contains('checked'),
+    span.classList.contains('is-checked'),
     'should keep the state from the last action')
   t.notOk(
     div.hasAttribute('checked'),
@@ -152,7 +152,7 @@ test('create checkbox', t => {
 test('create checkbox', t => {
   const node = createCheckbox('checkbox', true, null)
   const actual = node.className
-  const expected = 'checkbox checked'
+  const expected = 'checkbox is-checked'
 
   t.equal(actual, expected, 'add checkbox and checked class to element')
   t.end()
@@ -161,7 +161,7 @@ test('create checkbox', t => {
 test('create checkbox', t => {
   const node = createCheckbox('checkbox', null, true)
   const actual = node.className
-  const expected = 'checkbox disabled'
+  const expected = 'checkbox is-disabled'
 
   t.equal(actual, expected, 'add checkbox and disabled class to element')
   t.end()
@@ -170,7 +170,7 @@ test('create checkbox', t => {
 test('create checkbox', t => {
   const node = createCheckbox('checkbox', true, true)
   const actual = node.className
-  const expected = 'checkbox checked disabled'
+  const expected = 'checkbox is-checked is-disabled'
 
   t.equal(
     actual, expected, 'add checkbox, checked and disabled class to element')

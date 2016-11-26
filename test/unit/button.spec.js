@@ -35,7 +35,7 @@ test('positionate ripple', t => {
   positionateRipple(ripple, '100', '200')
 
   t.ok(
-    ripple.classList.contains('show'),
+    ripple.classList.contains('is-active'),
     'should add the class show')
   t.equal(
     ripple.style.top,

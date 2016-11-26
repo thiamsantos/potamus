@@ -35,7 +35,7 @@ export const isDisabled = node => {
   const hasDisabledAttribute =
     node.hasAttribute('disabled') && node.getAttribute('disabled') !== 'false'
 
-  if (node.classList.contains('disabled')) {
+  if (node.classList.contains('is-disabled')) {
     return true
   } else if (hasDisabledAttribute) {
     return true
@@ -53,7 +53,7 @@ export const checkboxBehaviour = e => {
   const node = e.target
 
   if (!isDisabled(node)) {
-    node.classList.toggle('checked')
+    node.classList.toggle('is-checked')
     toggleAttribute(node.nextSibling, 'checked')
   }
 }
@@ -83,11 +83,11 @@ export const createCheckbox = (className, checked, disabled) => {
   checkbox.classList.add(className)
 
   if (checked) {
-    checkbox.classList.add('checked')
+    checkbox.classList.add('is-checked')
   }
 
   if (disabled) {
-    checkbox.classList.add('disabled')
+    checkbox.classList.add('is-disabled')
   }
   return checkbox
 }
