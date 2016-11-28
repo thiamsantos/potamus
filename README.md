@@ -1,14 +1,13 @@
 # potamus
 [![Build Status](https://travis-ci.org/thiamsantos/potamus.svg?branch=master)](https://travis-ci.org/thiamsantos/potamus)
 [![Coveralls](https://img.shields.io/coveralls/thiamsantos/potamus.svg)](https://coveralls.io/github/thiamsantos/potamus?branch=master)
-[![David](https://img.shields.io/david/dev/thiamsantos/potamus.svg)](https://david-dm.org/thiamsantos/potamus?type=dev)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![npm (scoped)](https://img.shields.io/npm/v/potamus.svg)](https://www.npmjs.com/package/potamus)
 [![npm](https://img.shields.io/npm/l/potamus.svg)](https://github.com/thiamsantos/potamus/blob/master/LICENSE.md)
 
 > A lightweight and responsive setup of Material Design components writed in stylus.
 
-Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components, which would not change the way you drive your project.
+Is not always interesting to use in your project a whole framework like [Materialize](http://materializecss.com/) or [Material Design Lite](https://getmdl.io/). This project aims to provide independent components without any dependencies, which would not change the way you drive your project.
 
 ## Table of Contents
 
@@ -21,6 +20,7 @@ Is not always interesting to use in your project a whole framework like [Materia
   - [Checkbox](#checkbox)
   - [Radio](#radio)
   - [Text Field](#text-field)
+  - [Data Table](#data-table)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -83,6 +83,8 @@ import {button, checkbox} from 'potamus'
 
 ## Components
 > Note: All components works just fine without javascript, but with some limitations, so is good include the scripts.
+
+**You should pass a object as argument for every mixin, if none of the option is passed you can pass a blank object.**
 
 ### Button
 #### HTML:
@@ -181,6 +183,45 @@ Array
   .from(document.querySelectorAll('.some-awesome-text-field-name_sufix-input'))
   .forEach(potamus.textField)
 ```
+
+### Data Table
+```html
+<table class="some-awesome-table-name">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Stephen Curry</td>
+      <td>27</td>
+      <td>1,91</td>
+      <td>Akron, OH</td>
+    </tr>
+    <tr>
+      <td>Klay Thompson</td>
+      <td>25</td>
+      <td>2,01</td>
+      <td>Los Angeles, CA</td>
+    </tr>
+  </tbody>
+</table>
+```
+#### Stylus:
+```stylus
+.some-awesome-table-name
+  table({
+    responsive: true, // default false
+    striped: true     // default false
+  })
+```
+#### JavaScript:
+
+This component doesn't need javascript.
 
 ## Contribute
 - Fork it!

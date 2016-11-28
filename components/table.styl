@@ -1,0 +1,72 @@
+default-shadow()
+  $shadow-key-umbra-opacity = .2
+  $shadow-key-penumbra-opacity = .14
+  $shadow-ambient-shadow-opacity = .12
+
+  box-shadow 0 2px 2px 0 rgba(0,0,0,$shadow-key-penumbra-opacity),
+    0 3px 1px -2px rgba(0,0,0,$shadow-key-umbra-opacity),
+    0 1px 5px 0 rgba(0,0,0,$shadow-ambient-shadow-opacity)
+
+table(options)
+  $striped = options.striped || false
+  $responsive = options.responsive
+
+  $border-color = #e0e0e0
+  $focus-color = #eee
+  $text-color = rgba(0,0,0,.54)
+
+  default-shadow()
+  border-collapse collapse
+  text-align left
+  width 100%
+
+  thead
+    color $text-color
+
+  tbody tr:not(:last-child)
+  thead tr
+    border-bottom 1.5px solid $border-color
+
+  td
+  th
+    &:not(:first-child)
+      text-align right
+
+  if $striped
+    tbody tr:nth-child(odd)
+      background-color $focus-color
+  else
+    tbody tr:hover
+      background-color $focus-color
+
+  td
+  th
+    padding 1rem 1.5rem
+
+  if $responsive
+
+    @media screen and (max-width: 550px)
+      display flex
+      flex-direction row
+      width 100%
+
+      tr
+        border-bottom none
+
+      thead tr
+        border-right 1.5px solid $border-color
+
+      tbody
+        overflow-x auto
+        white-space nowrap
+        width auto
+
+        tr
+          background-color transparent !important
+          display inline-block
+
+      td
+      th
+        display block
+      th
+        text-align right

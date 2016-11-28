@@ -167,7 +167,6 @@
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) -webkit-transform;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) transform;
   transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1) transform, 0.2s cubic-bezier(0.4, 0, 0.2, 1) -webkit-transform;
-  will-change: transform;
 }
 .text-field-input {
   border: 0;
@@ -186,8 +185,8 @@
 }
 .text-field.is-closed .text-field-label {
   color: rgba(0,0,0,0.54);
-  -webkit-transform: scale(1.2) translateX(10%) translateY(180%);
-          transform: scale(1.2) translateX(10%) translateY(180%);
+  -webkit-transform: translateX(10%) translateY(180%) scale(1.2);
+          transform: translateX(10%) translateY(180%) scale(1.2);
 }
 .text-field.is-active .text-field-label {
   color: #e91e63;
@@ -220,4 +219,172 @@
 .text-field.is-valid:before,
 .text-field.is-valid:after {
   background: #4caf50;
+}
+.table-default {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+}
+.table-default thead {
+  color: rgba(0,0,0,0.54);
+}
+.table-default tbody tr:not(:last-child),
+.table-default thead tr {
+  border-bottom: 1.5px solid #e0e0e0;
+}
+.table-default td:not(:first-child),
+.table-default th:not(:first-child) {
+  text-align: right;
+}
+.table-default tbody tr:hover {
+  background-color: #eee;
+}
+.table-default td,
+.table-default th {
+  padding: 1rem 1.5rem;
+}
+.table-striped {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+}
+.table-striped thead {
+  color: rgba(0,0,0,0.54);
+}
+.table-striped tbody tr:not(:last-child),
+.table-striped thead tr {
+  border-bottom: 1.5px solid #e0e0e0;
+}
+.table-striped td:not(:first-child),
+.table-striped th:not(:first-child) {
+  text-align: right;
+}
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+.table-striped td,
+.table-striped th {
+  padding: 1rem 1.5rem;
+}
+.table-responsive {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+}
+.table-responsive thead {
+  color: rgba(0,0,0,0.54);
+}
+.table-responsive tbody tr:not(:last-child),
+.table-responsive thead tr {
+  border-bottom: 1.5px solid #e0e0e0;
+}
+.table-responsive td:not(:first-child),
+.table-responsive th:not(:first-child) {
+  text-align: right;
+}
+.table-responsive tbody tr:hover {
+  background-color: #eee;
+}
+.table-responsive td,
+.table-responsive th {
+  padding: 1rem 1.5rem;
+}
+@media screen and (max-width: 550px) {
+  .table-responsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+  }
+  .table-responsive tr {
+    border-bottom: none;
+  }
+  .table-responsive thead tr {
+    border-right: 1.5px solid #e0e0e0;
+  }
+  .table-responsive tbody {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: auto;
+  }
+  .table-responsive tbody tr {
+    background-color: transparent !important;
+    display: inline-block;
+  }
+  .table-responsive td,
+  .table-responsive th {
+    display: block;
+  }
+  .table-responsive th {
+    text-align: right;
+  }
+}
+.table-responsive-striped {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+}
+.table-responsive-striped thead {
+  color: rgba(0,0,0,0.54);
+}
+.table-responsive-striped tbody tr:not(:last-child),
+.table-responsive-striped thead tr {
+  border-bottom: 1.5px solid #e0e0e0;
+}
+.table-responsive-striped td:not(:first-child),
+.table-responsive-striped th:not(:first-child) {
+  text-align: right;
+}
+.table-responsive-striped tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+.table-responsive-striped td,
+.table-responsive-striped th {
+  padding: 1rem 1.5rem;
+}
+@media screen and (max-width: 550px) {
+  .table-responsive-striped {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+  }
+  .table-responsive-striped tr {
+    border-bottom: none;
+  }
+  .table-responsive-striped thead tr {
+    border-right: 1.5px solid #e0e0e0;
+  }
+  .table-responsive-striped tbody {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: auto;
+  }
+  .table-responsive-striped tbody tr {
+    background-color: transparent !important;
+    display: inline-block;
+  }
+  .table-responsive-striped td,
+  .table-responsive-striped th {
+    display: block;
+  }
+  .table-responsive-striped th {
+    text-align: right;
+  }
 }
