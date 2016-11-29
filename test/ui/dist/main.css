@@ -67,7 +67,7 @@
   -webkit-transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   width: 25px;
-  margin-bottom: 15px;
+  display: inline-block;
 }
 .checkbox:disabled,
 .checkbox.is-disabled {
@@ -100,7 +100,7 @@
   padding: 0;
   position: relative;
   width: 25px;
-  display: block;
+  display: inline-block;
 }
 .radio:disabled {
   opacity: 0.38;
@@ -387,4 +387,48 @@
   .table-responsive-striped th {
     text-align: right;
   }
+}
+.switch {
+  background-color: rgba(0,0,0,0.38);
+  border-radius: 100px;
+  display: inline-block;
+  height: 20px;
+  outline: 0;
+  position: relative;
+  -webkit-transition: background-color 0.45s cubic-bezier(0, 0, 0.2, 1);
+  transition: background-color 0.45s cubic-bezier(0, 0, 0.2, 1);
+  width: 50px;
+}
+.switch:after {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+  background-color: #fafafa;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 26px;
+  left: 0;
+  position: absolute;
+  top: -3px;
+  -webkit-transition: -webkit-transform 0.45s cubic-bezier(0, 0, 0.2, 1);
+  transition: -webkit-transform 0.45s cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 0.45s cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 0.45s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.45s cubic-bezier(0, 0, 0.2, 1);
+  width: 26px;
+}
+.switch:focus:after {
+  box-shadow: 0 0 8px rgba(0,0,0,0.18), 0 8px 16px rgba(0,0,0,0.36);
+}
+.switch.is-checked {
+  background-color: rgba(233,30,99,0.5);
+}
+.switch.is-checked:after {
+  background-color: #e91e63;
+  -webkit-transform: translateX(24px);
+          transform: translateX(24px);
+}
+.switch.is-disabled {
+  background-color: rgba(0,0,0,0.12) !important;
+}
+.switch.is-disabled:after {
+  background-color: #bdbdbd !important;
 }

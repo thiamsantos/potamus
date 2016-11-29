@@ -1,0 +1,56 @@
+switch(options)
+  $active-color = options.active-color || #009688
+  $disabled-thumb-color = #bdbdbd
+  $disabled-track-color = rgba(0,0,0,.12)
+  $default-track-color = rgba(0,0,0,.38)
+  $default-thumb-color = #fafafa
+
+  focus-shadow()
+    box-shadow 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36)
+
+  default-shadow()
+    $shadow-key-umbra-opacity = .2
+    $shadow-key-penumbra-opacity = .14
+    $shadow-ambient-shadow-opacity = .12
+
+    box-shadow 0 2px 2px 0 rgba(0,0,0,$shadow-key-penumbra-opacity),
+      0 3px 1px -2px rgba(0,0,0,$shadow-key-umbra-opacity),
+      0 1px 5px 0 rgba(0,0,0,$shadow-ambient-shadow-opacity)
+
+  background-color $default-track-color
+  border-radius 100px
+  display inline-block
+  height 20px
+  outline 0
+  position relative
+  transition background-color .45s cubic-bezier(0,0,.2,1)
+  width 50px
+
+  &:after
+    default-shadow()
+    background-color $default-thumb-color
+    border-radius 50%
+    content ''
+    display block
+    height 26px
+    left 0
+    position absolute
+    top -3px
+    transition transform .45s cubic-bezier(0,0,.2,1)
+    width 26px
+
+  &:focus:after
+    focus-shadow()
+
+  &.is-checked
+    background-color rgba($active-color, .5)
+
+    &:after
+      background-color $active-color
+      transform translateX(24px)
+
+  &.is-disabled
+    background-color $disabled-track-color !important
+
+    &:after
+      background-color $disabled-thumb-color !important

@@ -4,6 +4,10 @@ button(options)
     box-shadow 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36)
 
   default-shadow()
+    $shadow-key-umbra-opacity = .2
+    $shadow-key-penumbra-opacity = .14
+    $shadow-ambient-shadow-opacity = .12
+
     box-shadow 0 2px 2px 0 rgba(0,0,0,$shadow-key-penumbra-opacity),
       0 3px 1px -2px rgba(0,0,0,$shadow-key-umbra-opacity),
       0 1px 5px 0 rgba(0,0,0,$shadow-ambient-shadow-opacity)
@@ -14,10 +18,6 @@ button(options)
   $width = options.width
 
   $ripple-name = options.ripple-name || ripple
-
-  $shadow-key-umbra-opacity = .2
-  $shadow-key-penumbra-opacity = .14
-  $shadow-ambient-shadow-opacity = .12
 
   default-shadow()
   background-color $background-color
