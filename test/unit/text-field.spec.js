@@ -81,6 +81,27 @@ test('leaving input function', t => {
   t.end()
 })
 
+test('leaving input function', t => {
+  const input = document.createElement('input')
+  input.placeholder = 'some placeholder'
+
+  const textField = document.createElement('div')
+  textField.classList.add('is-active')
+  textField.appendChild(input)
+
+  leavingInput({
+    target: input
+  })
+
+  t.notOk(
+    textField.classList.contains('is-active'),
+    'should not contains the class is-active')
+  t.notOk(
+    textField.classList.contains('is-closed'),
+    'if has placeholder should not contains the class is-closed')
+  t.end()
+})
+
 test('focusing input function', t => {
   const input = document.createElement('input')
 
@@ -178,6 +199,52 @@ test('text field main function', t => {
   t.ok(
     wrapper.classList.contains('is-closed'),
     'if value is empty should contains the class is-closed')
+
+  t.end()
+})
+
+test('text field main function', t => {
+  const input = document.createElement('input')
+  input.checkValidity = () => true
+  input.placeholder = 'placeholder'
+  const wrapper = document.createElement('div')
+  wrapper.appendChild(input)
+
+  const blurEvent = document.createEvent('Event')
+  blurEvent.initEvent('blur', true, true)
+
+  const focusEvent = document.createEvent('Event')
+  focusEvent.initEvent('focus', true, true)
+
+  const inputEvent = document.createEvent('Event')
+  inputEvent.initEvent('input', true, true)
+
+  textField(input)
+
+  t.notOk(
+    wrapper.classList.contains('is-closed'),
+    'if has placeholder should not contains the class is-closed')
+
+  input.dispatchEvent(focusEvent)
+
+  t.ok(
+    wrapper.classList.contains('is-active'),
+    'should add the class is-active')
+
+  input.dispatchEvent(inputEvent)
+
+  t.ok(
+    wrapper.classList.contains('is-valid'),
+    'if input is valid add to the parent node the class is-valid')
+
+  input.dispatchEvent(blurEvent)
+
+  t.notOk(
+    wrapper.classList.contains('is-active'),
+    'should not contains the class is-active')
+  t.notOk(
+    wrapper.classList.contains('is-closed'),
+    'if has placeholder should not contains the class is-closed')
 
   t.end()
 })

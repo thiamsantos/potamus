@@ -223,7 +223,7 @@ var leavingInput = function leavingInput(e) {
   var target = e.target;
   target.parentNode.classList.remove('is-active');
 
-  if (!target.value) {
+  if (!target.value && !target.placeholder) {
     target.parentNode.classList.add('is-closed');
   }
 };
@@ -266,7 +266,9 @@ var typingInput = function typingInput(e) {
  * textField(node)
  */
 var textField = (function (node) {
-  node.parentNode.classList.add('is-closed');
+  if (!node.placeholder) {
+    node.parentNode.classList.add('is-closed');
+  }
 
   node.addEventListener('blur', leavingInput, true);
   node.addEventListener('focus', focusingInput);

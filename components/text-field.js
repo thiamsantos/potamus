@@ -29,7 +29,7 @@ export const leavingInput = e => {
   const target = e.target
   target.parentNode.classList.remove('is-active')
 
-  if (!target.value) {
+  if (!target.value && !target.placeholder) {
     target.parentNode.classList.add('is-closed')
   }
 }
@@ -72,7 +72,9 @@ export const typingInput = e => {
  * textField(node)
  */
 export default node => {
-  node.parentNode.classList.add('is-closed')
+  if (!node.placeholder) {
+    node.parentNode.classList.add('is-closed')
+  }
 
   node.addEventListener('blur', leavingInput, true)
   node.addEventListener('focus', focusingInput)
