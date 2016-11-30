@@ -1,6 +1,3 @@
-# Dist folder for ui test
-test/ui/dist
-
 # Logs
 logs
 *.log

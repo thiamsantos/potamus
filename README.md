@@ -18,6 +18,7 @@ Is not always interesting to use in your project a whole framework like [Materia
 - [Components](#components)
   - [Button](#button)
   - [Checkbox](#checkbox)
+  - [Switch](#switch)
   - [Radio](#radio)
   - [Text Field](#text-field)
   - [Data Table](#data-table)
@@ -131,7 +132,25 @@ import potamus from 'potamus'
 
 potamus.checkbox(navigator.userAgent, 'some-awesome-checkbox-class-name')
 ```
+### Switch
+#### HTML:
+```html
+<input class="some-awesome-switch-class-name" type="checkbox">
+```
+#### Stylus:
+```stylus
+.some-awesome-switch-class-name
+  checkbox({
+    active-color: #ccc, // default #009688
+  })
+```
+#### JavaScript:
+As switch is a checkbox input element it shares with checkbox the same API
+```javascript
+import potamus from 'potamus'
 
+potamus.checkbox(navigator.userAgent, 'some-awesome-switch-class-name')
+```
 ### Radio
 #### HTML:
 ```html

@@ -88,6 +88,8 @@ export const createCheckbox = (className, checked, disabled) => {
 
   if (disabled) {
     checkbox.classList.add('is-disabled')
+  } else {
+    checkbox.tabIndex = 0
   }
   return checkbox
 }

@@ -9,23 +9,23 @@
     "url": "git+https://github.com/thiamsantos/potamus.git"
   },
   "scripts": {
-    "test": "tape -r babel-register test/unit/**/*.js",
+    "test": "tape -r babel-register components/**/*.spec.js",
     "coverage": "nyc npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "precommit": "npm test && npm run lint",
     "prepush": "npm test && npm run lint",
     "lint": "npm run lint:js && npm run lint:styl",
-    "lint:js": "xo components/**/*.js test/**/*.js --no-semicolon --esnext --space --global=document --global=window --global=navigator",
+    "lint:js": "xo components/**/*.js --no-semicolon --esnext --space --global=document --global=window --global=navigator",
     "lint:styl": "stylint ./components/ -c .stylintrc",
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
-    "ui-test:styl": "stylus -u ./index.js -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist",
-    "ui-test:styl:watch": "stylus -u ./index.js -u autoprefixer-stylus test/ui/main.styl -o test/ui/dist -w",
-    "ui-test:js": "rollup -c test/ui/rollup.config.js",
-    "ui-test:js:watch": "rollup -c test/ui/rollup.config.js -w",
-    "serve": "browser-sync start -s \"test/ui\" -f \"test/ui/**/*\"",
-    "watch": "run-p -cl build:watch serve test:watch ui-test:js:watch ui-test:styl:watch",
-    "test:watch": "tape-watch -r babel-register test/unit/**/*.js -p faucet"
+    "visual-test:styl": "stylus -u ./index.js -u autoprefixer-stylus visual-test/main.styl -o visual-test/dist",
+    "visual-test:styl:watch": "stylus -u ./index.js -u autoprefixer-stylus visual-test/main.styl -o visual-test/dist -w",
+    "visual-test:js": "rollup -c visual-test/rollup.config.js",
+    "visual-test:js:watch": "rollup -c visual-test/rollup.config.js -w",
+    "serve": "browser-sync start -s \"visual-test\" -f \"visual-test/**/*\"",
+    "watch": "run-p -cl build:watch serve test:watch visual-test:js:watch visual-test:styl:watch",
+    "test:watch": "tape-watch -r babel-register components/**/*.spec.js -p faucet"
   },
   "keywords": [
     "stylus",

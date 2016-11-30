@@ -1,9 +1,9 @@
-import button from './components/button'
-import checkbox from './components/checkbox'
-import textField from './components/text-field'
+import button from './components/button/button'
+import checkbox from './components/checkbox/checkbox'
+import textField from './components/text-field/text-field'
 
 const potamus = opts => style => {
-  style.import('./components/*.styl')
+  style.import('./components/*/*.styl')
 }
 
 potamus.button = button

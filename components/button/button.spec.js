@@ -4,7 +4,7 @@ import button, {
   createRipple,
   positionateRipple,
   getHalf
-} from '../../components/button'
+} from './button'
 
 browserEnv(['document'])
 

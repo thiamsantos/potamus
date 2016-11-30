@@ -1,8 +1,8 @@
 import babel from 'rollup-plugin-babel'
 
 export default {
-  entry: 'test/ui/main.js',
-  format: 'cjs',
+  entry: 'visual-test/main.js',
+  format: 'iife',
   plugins: [
     babel({
       exclude: 'node_modules/**',
@@ -13,5 +13,5 @@ export default {
       plugins: ['external-helpers']
     })
   ],
-  dest: 'test/ui/dist/bundle.js'
+  dest: 'visual-test/dist/bundle.js'
 }

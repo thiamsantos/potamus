@@ -8,7 +8,7 @@ import checkbox, {
   hide,
   createCheckbox,
   firefoxCompat
-} from '../../components/checkbox'
+} from './checkbox'
 
 browserEnv(['document'])
 

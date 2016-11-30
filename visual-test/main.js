@@ -1,4 +1,4 @@
-import potamus from '../../index.esnext'
+import potamus from '../index.esnext'
 
 Array.from(document.querySelectorAll('.button'))
   .forEach(node => {
@@ -8,4 +8,5 @@ Array.from(document.querySelectorAll('.button'))
 Array.from(document.querySelectorAll('.text-field-input'))
   .forEach(potamus.textField)
 
+potamus.checkbox(navigator.userAgent, 'switch')
 potamus.checkbox(navigator.userAgent, 'checkbox')

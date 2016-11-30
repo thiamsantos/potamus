@@ -1,3 +1,4 @@
+(function () {
 'use strict';
 
 /**
@@ -287,4 +288,13 @@ potamus.button = button;
 potamus.checkbox = checkbox;
 potamus.textField = textField;
 
-module.exports = potamus;
+Array.from(document.querySelectorAll('.button')).forEach(function (node) {
+  node.addEventListener('click', potamus.button('ripple'));
+});
+
+Array.from(document.querySelectorAll('.text-field-input')).forEach(potamus.textField);
+
+potamus.checkbox(navigator.userAgent, 'switch');
+potamus.checkbox(navigator.userAgent, 'checkbox');
+
+}());

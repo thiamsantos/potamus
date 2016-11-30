@@ -1,4 +1,5 @@
-test/
+**/*.spec.js
+visual-test/
 .babelrc
 .editorconfig
 .travis.yml

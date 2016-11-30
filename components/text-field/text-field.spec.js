@@ -5,7 +5,7 @@ import textField, {
   leavingInput,
   focusingInput,
   typingInput
-} from '../../components/text-field'
+} from './text-field'
 
 browserEnv(['document'])
 
