@@ -1,4 +1,6 @@
 # potamus
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/thiamsantos/potamus.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/thiamsantos/potamus.svg?branch=master)](https://travis-ci.org/thiamsantos/potamus)
 [![Coveralls](https://img.shields.io/coveralls/thiamsantos/potamus.svg)](https://coveralls.io/github/thiamsantos/potamus?branch=master)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
